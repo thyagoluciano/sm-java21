@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.zup.realwave</groupId>
+        <artifactId>realwave-sales-manager</artifactId>
+        <version>5.0.2</version>
+    </parent>
+
+    <artifactId>realwave-sales-manager-infrastructure</artifactId>
+    <name>realwave-sales-manager-infrastructure</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.zup.realwave.common</groupId>
+            <artifactId>realwave-exception-handler</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.zup.realwave.common</groupId>
+            <artifactId>realwave-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>br.com.zup.realwave</groupId>
+            <artifactId>spring-boot-starter-realwave-serialize</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

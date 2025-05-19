@@ -1,0 +1,59 @@
+constraints:
+
+  - pattern: /purchase-orders
+    roles:
+      sm_purchase_order_read:
+        - GET
+      sm_purchase_order_write:
+        - POST
+
+  - pattern: /purchase-orders/{id:.+}
+    roles:
+      sm_purchase_order_read:
+        - GET
+
+  - pattern: /purchase-orders/{id:.+}/{feature:.+}
+    roles:
+      sm_purchase_order_write:
+        - POST
+        - PUT
+        - DELETE
+
+  - pattern: /purchase-orders/{id:.+}/{feature:.+}/{id2:.+}
+    roles:
+      sm_purchase_order_write:
+        - POST
+        - PUT
+        - DELETE
+
+  - pattern: /purchase-orders/callback
+    roles:
+      sm_purchase_order_callback:
+        - POST
+
+  - pattern: /manage/{slug:^(?!health).*$}
+    roles:
+      monitoring:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - HEAD
+        - OPTIONS
+        - PATCH
+
+  - pattern: /manage/{slug:^(?!health).*$}/**
+    roles:
+      monitoring:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - HEAD
+        - OPTIONS
+        - PATCH
+
+publicConstraints:
+  - pattern: /manage/health
+    methods:
+      - GET

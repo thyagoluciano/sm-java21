@@ -1,0 +1,91 @@
+{
+  "catalogOfferId": "4c0dc07d-25ba-40bd-9a8e-ef9b552667de",
+  "catalogOfferType": "PLAN",
+  "validity": {
+    "period": "DAY",
+    "duration": 30,
+    "unlimited": false
+  },
+  "price": {
+    "currency": "BRL",
+    "amount": 4990,
+    "scale": 2
+  },
+  "offerFields": {
+    "catalogId": "123123"
+  },
+  "customFields": {
+    "param1": "value1"
+  },
+  "offerItems": [
+    {
+      "productId": "product-id",
+      "catalogOfferItemId": "602e77a8-121b-4b00-8aaa-551528595490",
+      "price": {
+        "currency": "BRL",
+        "amount": 4990,
+        "scale": 2
+      },
+      "customFields": {
+        "itemParam1": "value1"
+      },
+      "recurrent": true,
+      "userParameters": {
+        "test": "test",
+        "name": "test"
+      }
+    },
+    {
+      "productId": "product-id",
+      "catalogOfferItemId": "5adc4f3d-9180-4c20-8f29-98f72fe29582",
+      "price": {
+        "currency": "BRL",
+        "amount": 0,
+        "scale": 2
+      },
+      "recurrent": true
+    }
+  ],
+  "pricesPerPeriod": [
+    {
+      "totalPrice": {
+        "amount": 1000,
+        "scale": 2,
+        "currency": "BRL"
+      },
+      "totalPriceWithDiscount": {
+        "amount": 200,
+        "scale": 2,
+        "currency": "BRL"
+      },
+      "totalDiscountPrice": {
+        "amount": 800,
+        "scale": 2,
+        "currency": "BRL"
+      },
+      "startAt": 1,
+      "endAt": 1,
+      "items": [
+        {
+          "compositionId": "123456789",
+          "itemId": "987654321",
+          "price": {
+            "amount": 1000,
+            "scale": 2,
+            "currency": "BRL"
+          },
+          "priceWithDiscount": {
+            "amount": 200,
+            "scale": 2,
+            "currency": "BRL"
+          },
+          "discountPrice": {
+            "amount": 800,
+            "scale": 2,
+            "currency": "BRL"
+          }
+        }
+      ]
+    }
+  ]
+}

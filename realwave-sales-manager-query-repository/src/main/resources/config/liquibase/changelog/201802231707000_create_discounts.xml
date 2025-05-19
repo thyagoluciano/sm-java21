@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="201802231707000-1" author="rw">
+        <createTable tableName="discounts">
+            <column name="coupon_code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="type" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="segment_id" type="text">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="segment_name" type="integer">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="segment_type" type="integer">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="price_currency" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price_amount" type="integer">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price_scale" type="integer">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+
+</databaseChangeLog>

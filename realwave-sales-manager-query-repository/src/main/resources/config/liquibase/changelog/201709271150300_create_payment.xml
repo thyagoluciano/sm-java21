@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="20170927150300-1" author="rw">
+        <createTable tableName="payment">
+            <column name="purchase_order_id" type="varchar(36)">
+                <constraints foreignKeyName="fk_payment_purchase_order" references="purchase_order(id)"
+                             nullable="false"/>
+            </column>
+
+            <column name="payment_method" type="varchar(36)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="payment_method_id" type="varchar(255)" defaultValue="default-method-id">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price_currency" type="text">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="price_amount" type="integer">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="price_scale" type="integer">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="payment_order" type="integer">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created" type="timestamp">
+                <constraints nullable="true"/>
+            </column>
+
+        </createTable>
+
+        <createIndex indexName="idx_payment"
+                     tableName="payment">
+            <column name="purchase_order_id" type="varchar(36)"/>
+        </createIndex>
+    </changeSet>
+
+
+</databaseChangeLog>

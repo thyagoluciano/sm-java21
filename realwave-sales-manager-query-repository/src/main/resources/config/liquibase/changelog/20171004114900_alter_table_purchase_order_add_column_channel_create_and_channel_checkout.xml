@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="20171004114900" author="rw">
+        <addColumn tableName="purchase_order" >
+            <column name="channel_create" type="varchar(10)"></column>
+            <column name="channel_checkout" type="varchar(10)"></column>
+        </addColumn>
+        <createIndex indexName="idx_channel_create" tableName="purchase_order">
+            <column name="channel_create" type="varchar(10)"/>
+        </createIndex>
+        <createIndex indexName="idx_channel_checkout" tableName="purchase_order">
+            <column name="channel_checkout" type="varchar(10)"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

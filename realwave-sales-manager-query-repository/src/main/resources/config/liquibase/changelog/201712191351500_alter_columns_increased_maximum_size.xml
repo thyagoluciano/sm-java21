@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="201712191351500-1" author="rw">
+        <modifyDataType
+                tableName="customer_order"
+                columnName="id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="purchase_order"
+                columnName="id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="purchase_order"
+                columnName="mgm_code"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="purchase_order"
+                columnName="on_boarding_sale_offer_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="purchase_order"
+                columnName="customer"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="purchase_order"
+                columnName="coupon_code"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="installation_attributes"
+                columnName="purchase_order_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="installation_attributes"
+                columnName="product_type_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="order_item"
+                columnName="purchase_order_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="order_item"
+                columnName="id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="order_item"
+                columnName="catalog_offer_type"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="order_item"
+                columnName="product_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="order_item"
+                columnName="catalog_offer_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="payment"
+                columnName="purchase_order_id"
+                newDataType="varchar(255)" />
+        <modifyDataType
+                tableName="payment"
+                columnName="payment_method"
+                newDataType="varchar(255)" />
+    </changeSet>
+</databaseChangeLog>

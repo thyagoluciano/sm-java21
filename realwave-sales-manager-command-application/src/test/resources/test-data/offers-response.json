@@ -1,0 +1,1446 @@
+{
+  "plans": [
+    {
+      "id": "11111111-1111-1116-1111-111111111111",
+      "orderIndex": 0,
+      "validity": {
+        "period": "DAY",
+        "duration": 99,
+        "unlimited": false
+      },
+      "availability": {
+        "begin": "2017-04-01T00:00:00",
+        "end": "2017-04-30T23:59:59"
+      },
+      "reward": {
+        "price": 1000,
+        "earn": 10
+      },
+      "totalPrice": {
+        "amount": 2003,
+        "scale": 2,
+        "currency": "USD",
+        "amountFormatted": "20.03"
+      },
+      "bundle": {
+        "id": "11111111-1111-1114-1111-111111111111",
+        "name": "Bundle Ligação e Internet",
+        "description": "description Bundle Ligação e Internet",
+        "compositions": [
+          {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "11111111-1111-1116-1112-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1001,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "10.01"
+          },
+          "originalPrice": {
+            "amount": 901,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "9.01"
+          },
+          "recurrent": true
+        },
+        {
+          "id": "11111111-1111-1116-1113-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          },
+          "price": {
+            "amount": 1002,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "10.02"
+          },
+          "originalPrice": {
+            "amount": 902,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "9.02"
+          },
+          "recurrent": true
+        }
+      ],
+      "bonuses": [
+        {
+          "id": "11111111-1111-1116-1112-111111111111",
+          "availability": {
+            "begin": "2017-04-01T00:00:00",
+            "end": "2017-04-30T23:59:59"
+          },
+          "points": 10,
+          "recurrent": 2,
+          "compositions": [
+            {
+              "id": "11111111-1111-1112-1111-111111111113",
+              "name": "SMS",
+              "code": "SMS_CODE",
+              "image": "http://localhost/sms.jpg",
+              "description": "description sms",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111113",
+                "code": "SMS_TYPE",
+                "name": "SMS",
+                "description": "description SMS",
+                "image": "http://localhost/sms.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111113",
+                  "name": "QUANTITY",
+                  "code": "QUANTITY_CODE",
+                  "units": [
+                    "QUANTITY",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            }
+          ],
+          "bundles": [
+            {
+              "id": "11111111-1111-1114-1111-111111111112",
+              "name": "Bundle Ligação e SMS",
+              "description": "description Bundle Ligação e SMS",
+              "compositions": [
+                {
+                  "id": "11111111-1111-1113-1111-111111111111",
+                  "name": "Ligação 120 Minutos",
+                  "image": "http://localhost:8080/ligacao120Minutos.png",
+                  "description": "description Ligação 120 Minutos",
+                  "component": {
+                    "id": "11111111-1111-1112-1111-111111111111",
+                    "name": "Ligação Local",
+                    "code": "ALL_FIX",
+                    "image": "http://localhost/all_fix.jpg",
+                    "description": "description ALL_FIX",
+                    "productType": {
+                      "id": "11111111-1111-1111-1111-111111111111",
+                      "code": "CALL_TYPE",
+                      "name": "Call",
+                      "description": "description call",
+                      "image": "http://localhost/call.jpg"
+                    },
+                    "attributes": [
+                      {
+                        "id": "11111111-1111-1112-1112-111111111111",
+                        "name": "Time",
+                        "code": "TIME",
+                        "units": [
+                          "MINUTES",
+                          "UNLIMITED"
+                        ]
+                      }
+                    ]
+                  },
+                  "attributes": [
+                    {
+                      "componentAttribute": {
+                        "id": "11111111-1111-1112-1112-111111111111",
+                        "name": "Time",
+                        "code": "TIME",
+                        "units": [
+                          "MINUTES",
+                          "UNLIMITED"
+                        ]
+                      },
+                      "unitValue": {
+                        "value": 120,
+                        "scale": 0,
+                        "unit": "MINUTES"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1113-1111-111111111113",
+                  "name": "100 SMS",
+                  "image": "http://localhost:8080/100SMS.png",
+                  "description": "description 100 SMS",
+                  "component": {
+                    "id": "11111111-1111-1112-1111-111111111113",
+                    "name": "SMS",
+                    "code": "SMS_CODE",
+                    "image": "http://localhost/sms.jpg",
+                    "description": "description sms",
+                    "productType": {
+                      "id": "11111111-1111-1111-1111-111111111113",
+                      "code": "SMS_TYPE",
+                      "name": "SMS",
+                      "description": "description SMS",
+                      "image": "http://localhost/sms.jpg"
+                    },
+                    "attributes": [
+                      {
+                        "id": "11111111-1111-1112-1112-111111111113",
+                        "name": "QUANTITY",
+                        "code": "QUANTITY_CODE",
+                        "units": [
+                          "QUANTITY",
+                          "UNLIMITED"
+                        ]
+                      }
+                    ]
+                  },
+                  "attributes": [
+                    {
+                      "componentAttribute": {
+                        "id": "11111111-1111-1112-1112-111111111113",
+                        "name": "QUANTITY",
+                        "code": "QUANTITY_CODE",
+                        "units": [
+                          "QUANTITY",
+                          "UNLIMITED"
+                        ]
+                      },
+                      "unitValue": {
+                        "value": 100,
+                        "scale": 0,
+                        "unit": "QUANTITY"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "customs": [
+    {
+      "id": "11111111-1111-1117-1111-111111111111",
+      "component": {
+        "id": "11111111-1111-1112-1111-111111111111",
+        "name": "Ligação Local",
+        "code": "ALL_FIX",
+        "image": "http://localhost/all_fix.jpg",
+        "description": "description ALL_FIX",
+        "productType": {
+          "id": "11111111-1111-1111-1111-111111111111",
+          "code": "CALL_TYPE",
+          "name": "Call",
+          "description": "description call",
+          "image": "http://localhost/call.jpg"
+        },
+        "attributes": [
+          {
+            "id": "11111111-1111-1112-1112-111111111111",
+            "name": "Time",
+            "code": "TIME",
+            "units": [
+              "MINUTES",
+              "UNLIMITED"
+            ]
+          }
+        ]
+      },
+      "validity": 30,
+      "mandatory": true,
+      "orderIndex": 0,
+      "items": [
+        {
+          "id": "11111111-1111-1117-1112-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "1.00"
+          },
+          "originalPrice": {
+            "amount": 99,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "0.99"
+          },
+          "reward": {
+            "price": 1000,
+            "earn": 10
+          },
+          "highlighted": false,
+          "availability": {
+            "begin": "2017-05-04T00:00:00",
+            "end": "2017-07-03T23:59:59"
+          }
+        },
+        {
+          "id": "11111111-1111-1117-1113-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111114",
+            "name": "Ligação Ilimitada",
+            "image": "http://localhost:8080/ligacaoilimitada.png",
+            "description": "description Ligação Ilimitada",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": -1,
+                  "scale": 0,
+                  "unit": "UNLIMITED"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 200,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "2.00"
+          },
+          "originalPrice": {
+            "amount": 199,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "1.99"
+          },
+          "reward": {
+            "price": 100,
+            "earn": 10
+          },
+          "highlighted": false,
+          "availability": {
+            "begin": "2017-08-04T00:00:00",
+            "end": "2017-09-03T23:59:59"
+          },
+          "bonuses": [
+            {
+              "id": "11111111-1111-1117-1114-111111111111",
+              "availability": {
+                "begin": "2017-04-01T00:00:00",
+                "end": "2017-04-30T23:59:59"
+              },
+              "points": 10,
+              "recurrent": 2,
+              "compositions": [
+                {
+                  "id": "11111111-1111-1112-1111-111111111113",
+                  "name": "SMS",
+                  "code": "SMS_CODE",
+                  "image": "http://localhost/sms.jpg",
+                  "description": "description sms",
+                  "productType": {
+                    "id": "11111111-1111-1111-1111-111111111113",
+                    "code": "SMS_TYPE",
+                    "name": "SMS",
+                    "description": "description SMS",
+                    "image": "http://localhost/sms.jpg"
+                  },
+                  "attributes": [
+                    {
+                      "id": "11111111-1111-1112-1112-111111111113",
+                      "name": "QUANTITY",
+                      "code": "QUANTITY_CODE",
+                      "units": [
+                        "QUANTITY",
+                        "UNLIMITED"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "bundles": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "addons": [
+    {
+      "id": "11111111-1111-1118-1111-111111111111",
+      "availability": {
+        "begin": "2017-04-01T00:00:00",
+        "end": "2017-04-30T23:59:59"
+      },
+      "validity": 99,
+      "reward": {
+        "price": 1000,
+        "earn": 50
+      },
+      "totalPrice": {
+        "amount": 100,
+        "scale": 2,
+        "currency": "USD",
+        "amountFormatted": "1.00"
+      },
+      "items": [
+        {
+          "id": "11111111-1111-1113-1111-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "1.00"
+          },
+          "refill": true
+        }
+      ]
+    },
+    {
+      "id": "11111111-1111-1118-1111-111111111112",
+      "availability": {
+        "begin": "2017-04-01T00:00:00",
+        "end": "2017-04-30T23:59:59"
+      },
+      "validity": 99,
+      "reward": {
+        "price": 1000,
+        "earn": 50
+      },
+      "totalPrice": {
+        "amount": 300,
+        "scale": 2,
+        "currency": "USD",
+        "amountFormatted": "3.00"
+      },
+      "bundle": {
+        "id": "11111111-1111-1114-1111-111111111111",
+        "name": "Bundle Ligação e Internet",
+        "description": "description Bundle Ligação e Internet",
+        "compositions": [
+          {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "11111111-1111-1113-1111-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 200,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "2.00"
+          },
+          "refill": false
+        },
+        {
+          "id": "11111111-1111-1113-1111-111111111112",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          },
+          "price": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "1.00"
+          },
+          "refill": false
+        }
+      ]
+    }
+  ],
+  "sales": [
+    {
+      "id": "11111111-1111-1119-1111-111111111111",
+      "availability": {
+        "begin": "2017-04-01T00:00:00",
+        "end": "2017-04-30T23:59:59"
+      },
+      "validity": 40,
+      "reward": {
+        "price": 1000,
+        "earn": 50
+      },
+      "purchaseLimit": 5,
+      "name": "Mother's Day",
+      "description": "Mother's Day, Free Call",
+      "image": "http://zup.me/image.jpg",
+      "regulationFile": "http://zup.me/regulation.pdf",
+      "totalPrice": {
+        "amount": 1001,
+        "scale": 2,
+        "currency": "USD",
+        "amountFormatted": "10.01"
+      },
+      "items": [
+        {
+          "id": "11111111-1111-1113-1111-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1001,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "10.01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "11111111-1111-1119-1111-111111111112",
+      "availability": {
+        "begin": "2017-04-01T00:00:00",
+        "end": "2017-04-30T23:59:59"
+      },
+      "validity": 50,
+      "reward": {
+        "price": 1000,
+        "earn": 50
+      },
+      "purchaseLimit": 5,
+      "name": "Mother's Day with Bundle",
+      "description": "Mother's Day, Free Call",
+      "image": "http://zup.me/image.jpg",
+      "regulationFile": "http://zup.me/regulation.pdf",
+      "totalPrice": {
+        "amount": 2002,
+        "scale": 2,
+        "currency": "USD",
+        "amountFormatted": "20.02"
+      },
+      "bundle": {
+        "id": "11111111-1111-1114-1111-111111111111",
+        "name": "Bundle Ligação e Internet",
+        "description": "description Bundle Ligação e Internet",
+        "compositions": [
+          {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "11111111-1111-1113-1111-111111111111",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111111",
+            "name": "Ligação 120 Minutos",
+            "image": "http://localhost:8080/ligacao120Minutos.png",
+            "description": "description Ligação 120 Minutos",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111111",
+              "name": "Ligação Local",
+              "code": "ALL_FIX",
+              "image": "http://localhost/all_fix.jpg",
+              "description": "description ALL_FIX",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111111",
+                "code": "CALL_TYPE",
+                "name": "Call",
+                "description": "description call",
+                "image": "http://localhost/call.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111111",
+                  "name": "Time",
+                  "code": "TIME",
+                  "units": [
+                    "MINUTES",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 120,
+                  "scale": 0,
+                  "unit": "MINUTES"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1001,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "10.01"
+          }
+        },
+        {
+          "id": "11111111-1111-1113-1111-111111111112",
+          "composition": {
+            "id": "11111111-1111-1113-1111-111111111112",
+            "name": "Internet 4.5GB",
+            "image": "http://localhost:8080/Internet45GB.png",
+            "description": "description Internet 4.5GB",
+            "component": {
+              "id": "11111111-1111-1112-1111-111111111112",
+              "name": "Internet",
+              "code": "INTERNET",
+              "image": "http://localhost/INTERNET.jpg",
+              "description": "description INTERNET",
+              "productType": {
+                "id": "11111111-1111-1111-1111-111111111112",
+                "code": "BROADBAND_TYPE",
+                "name": "Broadband",
+                "description": "description Broadband",
+                "image": "http://localhost/broadband.jpg"
+              },
+              "attributes": [
+                {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                }
+              ]
+            },
+            "attributes": [
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1112-111111111112",
+                  "name": "Volume",
+                  "code": "VOL",
+                  "units": [
+                    "MB",
+                    "GB",
+                    "UNLIMITED"
+                  ]
+                },
+                "unitValue": {
+                  "value": 45,
+                  "scale": 1,
+                  "unit": "GB"
+                }
+              },
+              {
+                "componentAttribute": {
+                  "id": "11111111-1111-1112-1113-111111111112",
+                  "name": "Velocidade",
+                  "code": "SPEED",
+                  "values": [
+                    "2MB",
+                    "4MB",
+                    "8MB",
+                    "20MB"
+                  ]
+                },
+                "value": "4MB"
+              }
+            ]
+          },
+          "price": {
+            "amount": 1001,
+            "scale": 2,
+            "currency": "USD",
+            "amountFormatted": "10.01"
+          }
+        }
+      ]
+    }
+  ]
+}

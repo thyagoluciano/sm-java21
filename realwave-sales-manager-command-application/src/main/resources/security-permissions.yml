@@ -1,0 +1,34 @@
+permissions:
+  - module: rw_cms
+    roles:
+      - cms_offers_r
+      - cms_search_r
+
+  - module: rw_com
+    roles:
+      - com_customer_order_create
+
+  - module: rw_mgm
+    roles:
+      - mgm_policy_reader
+      - mgm_member_reader
+
+  - module: rw_cs
+    roles:
+      - cs_customer_read
+
+  - module: rw_cim
+    roles:
+      - cim_customer_read
+
+  - module: rw_wallet
+    roles:
+      - wallet_payment_method_reader
+
+  - module: rw_coupon
+    roles:
+      - coupon_integration_reader
+
+  - module: rw_pcm
+    roles:
+      - pcm_r

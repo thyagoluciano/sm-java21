@@ -1,0 +1,965 @@
+{
+	"id": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+	"name": "rw-sales-manager V1",
+	"description": "",
+	"order": [
+		"14fffc11-d02b-298c-8987-4ef5e589d707",
+		"239db821-f65a-d0db-cbd4-5d62d8778032",
+		"374fe58b-db70-5b63-9d73-3405b94f7ab8",
+		"e773f633-9217-3026-a9ef-37730ab9ab7c",
+		"834f3df4-e4ed-9752-a6e6-9f262bc6cbd4",
+		"0f63abae-f76e-a1f5-d7ff-a29b12bc5751",
+		"3bbe40df-2151-ed57-f236-1fe5a5f0ae1f",
+		"317a7a7d-d9cd-5a2a-1fce-55ed99600a53",
+		"a23fcf67-f5ee-5f58-a3b3-9f9c8a78770f",
+		"574619fe-4ce7-3ee1-661b-6a867e99840b",
+		"fef0e241-f97a-41d1-309d-149d930308be",
+		"a3ee9eb0-dc46-51b5-b594-9a19397e8b9f",
+		"3b5e5742-b608-c14e-5553-4ee347e7c2f0",
+		"6d63ef67-a40c-957a-4598-79af11ff4195",
+		"82f1da77-70f5-c25d-f856-77a457edd28f",
+		"2f47f7f0-ce46-b067-52e0-f5952bac15aa",
+		"42154a3a-604b-725e-6d30-c01c62335145"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": "339120",
+	"public": false,
+	"hasRequests": true,
+	"requests": [
+		{
+			"folder": null,
+			"id": "0f63abae-f76e-a1f5-d7ff-a29b12bc5751",
+			"name": "Customer",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "PUT",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/customer",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"customer\": \"3b571d25-7889-4c44-8985-9137ce4c2307\"\n}"
+		},
+		{
+			"folder": null,
+			"id": "14fffc11-d02b-298c-8987-4ef5e589d707",
+			"name": "Create purchase order",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nx-application-key: {{gw-app-key}}",
+			"method": "POST",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders",
+			"preRequestScript": "var testData = {\r\n    segmentation: {\r\n        ddd: \"11\",\r\n        city: \"São Paulo\"\r\n    },\r\n    mgm: {\r\n        code: \"MGM100\",\r\n        fields: {\r\n            name: \"MGM 1GB\",\r\n            description: \"Convide 1 amigo e ganhe 1GB de internet movel\"\r\n        }\r\n    },\r\n    onBoardingSale: {\r\n        id: \"my-onboarding-sale-id\",\r\n        fields: {\r\n            name: \"Promoção Legal\",\r\n            description: \"1GB por mês de internet movel durante 1 ano\"\r\n        }\r\n    },\r\n    customer: {\r\n        id: \"3b571d25-7889-4c44-8985-9137ce4c2307\"\r\n    },\r\n    coupon: {\r\n        id: \"CUPON321\",\r\n        fields: {\r\n            name: \"Cupon dia do amigo\",\r\n            description: \"15% de desconto\"\r\n        }\r\n    },\r\n    paymentMean: \"CREDIT_CARD\",\r\n    items: [\r\n    {\r\n      id: \"12345\",\r\n      type: \"PLAN\",\r\n      value: {\r\n        attr: \"value\",\r\n        attr2: \"value2\"\r\n      }\r\n    }\r\n  ],\r\n  orderCapture: [\r\n    {\r\n      id: \"MOBILE\",\r\n      customFields: {\r\n        iccid: \"12334532123123\",\r\n        number: \"33234321\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n\r\npostman.setGlobalVariable(\"testData\", testData);",
+			"tests": "tests[\"Status code is 201\"] = (responseCode.code === 201);\n\nvar purchaseOrderId = JSON.parse(responseBody).id\npostman.setGlobalVariable(\"purchaseOrderId\", purchaseOrderId);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b"
+		},
+		{
+			"folder": null,
+			"id": "239db821-f65a-d0db-cbd4-5d62d8778032",
+			"name": "Segmentation",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "PUT",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/segmentation",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\r\n  \"filter\" : {\r\n    \"customerId\" : \"11111111-1111-1111-1111-111111111111\",\r\n    \"mergeCatalogs\" : true,\r\n    \"profile\" : {\r\n      \"type\" : \"CLAUSE\",\r\n      \"logicalOperator\" : \"AND\",\r\n      \"clauses\" : [ {\r\n        \"type\" : \"RULE\",\r\n        \"content\" : {\r\n          \"key\" : \"gender\",\r\n          \"condition\" : \"EQUAL\",\r\n          \"value\" : [ \"M\" ]\r\n        }\r\n      }, {\r\n        \"type\" : \"RULE\",\r\n        \"content\" : {\r\n          \"key\" : \"tags.tag\",\r\n          \"condition\" : \"EQUAL\",\r\n          \"value\" : [ \"CLIENT\" ]\r\n        }\r\n      } ]\r\n    },\r\n    \"catalog\" : {\r\n      \"type\" : \"CLAUSE\",\r\n      \"logicalOperator\" : \"OR\",\r\n      \"clauses\" : [ {\r\n        \"type\" : \"RULE\",\r\n        \"content\" : {\r\n          \"key\" : \"channels.name\",\r\n          \"condition\" : \"EQUAL\",\r\n          \"value\" : [ \"CHANNEL1\", \"AAA\" ]\r\n        }\r\n      }, {\r\n        \"type\" : \"RULE\",\r\n        \"content\" : {\r\n          \"key\" : \"channels.name\",\r\n          \"condition\" : \"EQUAL\",\r\n          \"value\" : [ \"CHANNEL2\", \"AAA\" ]\r\n        }\r\n      } ]\r\n    }\r\n  }\r\n}"
+		},
+		{
+			"folder": null,
+			"id": "2f47f7f0-ce46-b067-52e0-f5952bac15aa",
+			"name": "Validate purchase order",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nx-application-key: {{gw-app-key}}",
+			"method": "GET",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/validation",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b"
+		},
+		{
+			"folder": null,
+			"id": "317a7a7d-d9cd-5a2a-1fce-55ed99600a53",
+			"name": "Cupon",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "PUT",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/coupon",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"code\": \"CUPON321\",\n  \"customFields\": {\n    \"description\": \"15% de desconto\",\n    \"name\": \"Cupon dia do amigo\"\n  }\n}"
+		},
+		{
+			"folder": null,
+			"id": "374fe58b-db70-5b63-9d73-3405b94f7ab8",
+			"name": "Onboarding Sale",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "PUT",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/onboarding-sale",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"id\": \"my-onboarding-sale-id\",\n  \"customFields\": {\n    \"description\": \"1GB por mês de internet movel durante 1 ano\",\n    \"name\": \"Promoção Legal\"\n  }\n}"
+		},
+		{
+			"folder": null,
+			"id": "3b5e5742-b608-c14e-5553-4ee347e7c2f0",
+			"name": "Remove item",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nx-application-key: {{gw-app-key}}",
+			"method": "DELETE",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/items/{{itemToBeRemoved}}",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"responses": [
+				{
+					"owner": "339120",
+					"lastUpdatedBy": "339120",
+					"lastRevision": 2326050655,
+					"request": {
+						"id": "c6978d3a-a68f-4c34-9ed9-da87e2ac6486",
+						"description": "",
+						"method": "POST",
+						"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}",
+						"dataMode": "raw",
+						"data": [],
+						"rawModeData": "",
+						"pathVariables": {
+							"undefined": "1e59ee51-bbc8-4657-a80b-22cdc008358d"
+						},
+						"url": "http://{{command-host}}/purchase-order/:id/items",
+						"pathVariableData": [
+							{
+								"key": "id",
+								"value": "1e59ee51-bbc8-4657-a80b-22cdc008358d"
+							},
+							{
+								"value": "1e59ee51-bbc8-4657-a80b-22cdc008358d",
+								"id": "undefined"
+							}
+						],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "x-organization-slug",
+								"value": "{{organization-slug}}",
+								"description": ""
+							},
+							{
+								"key": "x-application-id",
+								"value": "{{application-id}}",
+								"description": ""
+							}
+						]
+					},
+					"id": "928638c3-8d6f-b212-315b-08d2788e57d8",
+					"name": "Simple Item",
+					"status": "OK",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": ""
+					},
+					"time": "0",
+					"headers": [],
+					"cookies": [],
+					"mime": null,
+					"text": "{\n  \"itemId\": \"1234\",\n  \"type\": \"ADDON\"\n}",
+					"language": "json",
+					"rawDataType": "text",
+					"state": null,
+					"previewType": "parsed",
+					"searchResultScrolledTo": null,
+					"version": null,
+					"requestObject": "{\"id\":\"c6978d3a-a68f-4c34-9ed9-da87e2ac6486\",\"description\":\"\",\"method\":\"POST\",\"headers\":\"x-organization-slug: {{organization-slug}}\\nx-application-id: {{application-id}}\",\"dataMode\":\"raw\",\"data\":[],\"rawModeData\":\"\",\"pathVariables\":{\"undefined\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\"},\"url\":\"http://{{command-host}}/purchase-order/:id/items\",\"pathVariableData\":[{\"key\":\"id\",\"value\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\"},{\"value\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\",\"id\":\"undefined\"}],\"queryParams\":[],\"headerData\":[{\"key\":\"x-organization-slug\",\"value\":\"{{organization-slug}}\",\"description\":\"\"},{\"key\":\"x-application-id\",\"value\":\"{{application-id}}\",\"description\":\"\"}]}",
+					"createdAt": "2017-10-04T16:00:42.000Z",
+					"updatedAt": "2017-10-04T16:00:43.000Z",
+					"write": true
+				}
+			]
+		},
+		{
+			"id": "3bbe40df-2151-ed57-f236-1fe5a5f0ae1f",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/payment",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507580859367,
+			"name": "Payment",
+			"description": "",
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"methods\": [\n    {\n      \"methodId\": \"CRC-21be8fa4-a29b-410c-9f63-1d49cab63027\",\n      \"method\": \"CREDIT_CARD\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 6600,\n        \"scale\": 2\n      },\n      \"customFields\": {\n        \"payment\": \"payment-fields\"\n      }\n    },\n    {\n      \"methodId\": \"CRC-21be8fa4-a29b-410c-9f63-1d49cab63027\",\n      \"method\": \"CREDIT_CARD\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 5500,\n        \"scale\": 2\n      },\n      \"customFields\": {\n        \"payment\": \"payment-fields\"\n      }\n    }\n  ]\n}"
+		},
+		{
+			"folder": null,
+			"id": "42154a3a-604b-725e-6d30-c01c62335145",
+			"name": "Checkout",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nx-application-key: {{gw-app-key}}",
+			"method": "POST",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/checkout",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b"
+		},
+		{
+			"folder": null,
+			"id": "574619fe-4ce7-3ee1-661b-6a867e99840b",
+			"name": "Get by ID",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{query-host}}/purchase-orders/{{purchaseOrderId}}",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b"
+		},
+		{
+			"folder": null,
+			"id": "6d63ef67-a40c-957a-4598-79af11ff4195",
+			"name": "Installation Attributes 2",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/installation-attributes",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"productTypeId\": \"TV\",\n  \"attributes\": {\n    \"iccid\": \"12334532123123\",\n    \"number\": \"33234321\"\n  }\n}"
+		},
+		{
+			"folder": null,
+			"id": "82f1da77-70f5-c25d-f856-77a457edd28f",
+			"name": "Remove Installation Attributes",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "DELETE",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/installation-attributes/TV",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b"
+		},
+		{
+			"folder": null,
+			"id": "834f3df4-e4ed-9752-a6e6-9f262bc6cbd4",
+			"name": "Add Item",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/items",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"item id must not be null\"] = jsonData.id !== null;\n\n\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"responses": [
+				{
+					"owner": "339120",
+					"lastUpdatedBy": "339120",
+					"lastRevision": 2326050658,
+					"request": "4452ef55-31c3-ff76-6507-ef3362ad0257",
+					"id": "fb06ae29-1ef7-fbf0-bb26-8f6da1a7cded",
+					"name": "Simple Item",
+					"status": "OK",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": ""
+					},
+					"time": "0",
+					"headers": [],
+					"cookies": [],
+					"mime": null,
+					"text": "{\n  \"itemId\": \"1234\",\n  \"type\": \"ADDON\"\n}",
+					"language": "json",
+					"rawDataType": "text",
+					"state": null,
+					"previewType": "parsed",
+					"searchResultScrolledTo": null,
+					"version": null,
+					"requestObject": "\"4452ef55-31c3-ff76-6507-ef3362ad0257\"",
+					"createdAt": "2017-10-04T16:00:42.000Z",
+					"updatedAt": "2017-10-04T16:00:43.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": "{\n  \"catalogOfferId\": \"504999fd-f0c4-4eb0-967c-35493edbe493\",\n  \"catalogOfferType\": \"PLAN\",\n  \"validity\": {\n    \"period\": \"DAY\",\n    \"duration\": 30,\n    \"unlimited\": false\n  },\n  \"price\": {\n    \"currency\": \"BRL\",\n    \"amount\": 3300,\n    \"scale\": 2\n  },\n  \"offerItems\": [\n    {\n      \"catalogOfferItemId\": \"990ddd1a-8ce4-4ec8-88f9-06968e972dd1\",\n      \"price\": {\n       \"amount\": 100,\n        \"scale\": 2,\n        \"currency\": \"BRL\",\n        \"amountFormatted\": \"1.00\"\n      },\n      \"recurrent\": false\n    },\n    {\n      \"catalogOfferItemId\": \"c68931dd-fe4e-4cc3-a8dd-ec77f3f3eeb0\",\n      \"price\": {\n        \"amount\": 1000,\n        \"scale\": 2,\n        \"currency\": \"BRL\",\n        \"amountFormatted\": \"10.00\"\n      },\n      \"recurrent\": false\n    }\n  ]\n}"
+		},
+		{
+			"folder": null,
+			"id": "a23fcf67-f5ee-5f58-a3b3-9f9c8a78770f",
+			"name": "Installation Attributes",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/installation-attributes",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"productTypeId\": \"MOBILE_LINE\",\n  \"attributes\": {\n    \"iccid\": \"12334532123123\",\n    \"number\": \"33234321\"\n  }\n}"
+		},
+		{
+			"folder": null,
+			"id": "a3ee9eb0-dc46-51b5-b594-9a19397e8b9f",
+			"name": "Update Item",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/items/{{itemToBeUpdated}}",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"item id must not be null\"] = jsonData.id !== null;\n\npostman.setGlobalVariable(\"itemToBeRemoved\", jsonData.id);\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"responses": [
+				{
+					"owner": "339120",
+					"lastUpdatedBy": "339120",
+					"lastRevision": 2326050664,
+					"request": {
+						"id": "41d953cc-9eb2-4884-88be-0a8ed969f089",
+						"description": "",
+						"method": "POST",
+						"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}",
+						"dataMode": "raw",
+						"data": [],
+						"rawModeData": "",
+						"pathVariables": {
+							"undefined": "1e59ee51-bbc8-4657-a80b-22cdc008358d"
+						},
+						"url": "http://{{command-host}}/purchase-order/:id/items",
+						"pathVariableData": [
+							{
+								"key": "id",
+								"value": "1e59ee51-bbc8-4657-a80b-22cdc008358d"
+							},
+							{
+								"value": "1e59ee51-bbc8-4657-a80b-22cdc008358d",
+								"id": "undefined"
+							}
+						],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "x-organization-slug",
+								"value": "{{organization-slug}}",
+								"description": ""
+							},
+							{
+								"key": "x-application-id",
+								"value": "{{application-id}}",
+								"description": ""
+							}
+						]
+					},
+					"id": "02b7efd6-fde2-3ccc-7b66-7b9b810c0032",
+					"name": "Simple Item",
+					"status": "OK",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": ""
+					},
+					"time": "0",
+					"headers": [],
+					"cookies": [],
+					"mime": null,
+					"text": "{\n  \"itemId\": \"1234\",\n  \"type\": \"ADDON\"\n}",
+					"language": "json",
+					"rawDataType": "text",
+					"state": null,
+					"previewType": "parsed",
+					"searchResultScrolledTo": null,
+					"version": null,
+					"requestObject": "{\"id\":\"41d953cc-9eb2-4884-88be-0a8ed969f089\",\"description\":\"\",\"method\":\"POST\",\"headers\":\"x-organization-slug: {{organization-slug}}\\nx-application-id: {{application-id}}\",\"dataMode\":\"raw\",\"data\":[],\"rawModeData\":\"\",\"pathVariables\":{\"undefined\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\"},\"url\":\"http://{{command-host}}/purchase-order/:id/items\",\"pathVariableData\":[{\"key\":\"id\",\"value\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\"},{\"value\":\"1e59ee51-bbc8-4657-a80b-22cdc008358d\",\"id\":\"undefined\"}],\"queryParams\":[],\"headerData\":[{\"key\":\"x-organization-slug\",\"value\":\"{{organization-slug}}\",\"description\":\"\"},{\"key\":\"x-application-id\",\"value\":\"{{application-id}}\",\"description\":\"\"}]}",
+					"createdAt": "2017-10-04T16:00:42.000Z",
+					"updatedAt": "2017-10-04T16:00:43.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": "{\n  \"catalogOfferId\": \"d5fcd7de-f9c4-47b7-8358-4c024d42f914\",\n  \"catalogOfferType\": \"PLAN\",\n  \"validity\": {\n    \"period\": \"DAY\",\n    \"duration\": 60,\n    \"unlimited\": false\n  },\n  \"price\": {\n    \"currency\": \"BRL\",\n    \"amount\": 5990,\n    \"scale\": 2\n  },\n  \"offerFields\": {\n    \"catalogId\": \"123123\"\n  },\n  \"customFields\": {\n    \"param1\": \"value1\"\n  },\n  \"offerItems\": [\n    {\n      \"catalogOfferItemId\": \"f6fcd7de-f9c4-47b7-8358-4c024d42f914\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 2590,\n        \"scale\": 2\n      },\n      \"customFields\": {\n        \"itemParam1\": \"value1\"\n      },\n      \"recurrent\": true\n    },\n    {\n      \"productId\": \"f4572771-4211-48e0-b4c3-d96bb2d305b9\",\n      \"catalogOfferItemId\": \"2aa2c4c8-915e-4392-aba9-463ab581a6fd\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 3400,\n        \"scale\": 2\n      },\n      \"recurrent\": true\n    }\n  ]\n}"
+		},
+		{
+			"folder": null,
+			"id": "e773f633-9217-3026-a9ef-37730ab9ab7c",
+			"name": "Member Get Member",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}",
+			"method": "PUT",
+			"pathVariables": null,
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/mgm",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"rawModeData": "{\n  \"code\": \"MGM100\",\n  \"customFields\": {\n    \"description\": \"Convide 1 amigo e ganhe 1GB de internet movel\",\n    \"name\": \"MGM 1GB\"\n  }\n}"
+		},
+		{
+			"folder": null,
+			"id": "fef0e241-f97a-41d1-309d-149d930308be",
+			"name": "Add Item 2",
+			"dataMode": "raw",
+			"data": [],
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "x-organization-slug: {{organization-slug}}\nx-application-id: {{application-id}}\nContent-Type: application/json\nx-application-key: {{gw-app-key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{command-host}}/purchase-orders/{{purchaseOrderId}}/items",
+			"preRequestScript": "",
+			"tests": "tests[\"Status code is 200\"] = (responseCode.code === 200);\n\npostman.setGlobalVariable(\"itemToBeRemoved\", \"f6fcd7de-f9c4-47b7-8358-4c024d42f914\");\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"item id must not be null\"] = jsonData.id !== null;\n\npostman.setGlobalVariable(\"itemToBeUpdated\", jsonData.id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "x-organization-slug",
+					"value": "{{organization-slug}}",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "x-application-id",
+					"value": "{{application-id}}",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "x-application-key",
+					"value": "{{gw-app-key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "f43fa088-4a97-8396-9deb-55d9f2fc1b6b",
+			"responses": [
+				{
+					"owner": "339120",
+					"lastUpdatedBy": "339120",
+					"lastRevision": 2326050662,
+					"request": "250a8791-f984-c9cf-4bc0-82e5edb82706",
+					"id": "a02b96fb-f846-718d-c878-f55d4e2a92db",
+					"name": "Simple Item",
+					"status": "OK",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": ""
+					},
+					"time": "0",
+					"headers": [],
+					"cookies": [],
+					"mime": null,
+					"text": "{\n  \"itemId\": \"1234\",\n  \"type\": \"ADDON\"\n}",
+					"language": "json",
+					"rawDataType": "text",
+					"state": null,
+					"previewType": "parsed",
+					"searchResultScrolledTo": null,
+					"version": null,
+					"requestObject": "\"250a8791-f984-c9cf-4bc0-82e5edb82706\"",
+					"createdAt": "2017-10-04T16:00:42.000Z",
+					"updatedAt": "2017-10-04T16:00:43.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": "{\n  \"catalogOfferId\": \"d5fcd7de-f9c4-47b7-8358-4c024d42f914\",\n  \"catalogOfferType\": \"PLAN\",\n  \"validity\": {\n    \"period\": \"DAY\",\n    \"duration\": 30,\n    \"unlimited\": false\n  },\n  \"price\": {\n    \"currency\": \"BRL\",\n    \"amount\": 4990,\n    \"scale\": 2\n  },\n  \"offerFields\": {\n    \"catalogId\": \"123123\"\n  },\n  \"customFields\": {\n    \"param1\": \"value1\"\n  },\n  \"offerItems\": [\n    {\n      \"catalogOfferItemId\": \"f6fcd7de-f9c4-47b7-8358-4c024d42f914\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 2590,\n        \"scale\": 2\n      },\n      \"customFields\": {\n        \"itemParam1\": \"value1\"\n      },\n      \"recurrent\": true\n    },\n    {\n      \"productId\": \"f4572771-4211-48e0-b4c3-d96bb2d305b9\",\n      \"catalogOfferItemId\": \"2aa2c4c8-915e-4392-aba9-463ab581a6fd\",\n      \"price\": {\n        \"currency\": \"BRL\",\n        \"amount\": 2400,\n        \"scale\": 2\n      },\n      \"recurrent\": true\n    }\n  ]\n}"
+		}
+	]
+}

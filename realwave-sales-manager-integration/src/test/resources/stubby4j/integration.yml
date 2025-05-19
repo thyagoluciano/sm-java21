@@ -1,0 +1,1574 @@
+- request:
+    method: POST
+    url: /customer-orders
+    headers:
+      x-channel-id: "payment-failed"
+
+  response:
+    status: 400
+    body: >
+      {
+        "customerOrderId": "JOIN-5f8ac5d0-a1f6-476e-b973-61d426f0ad4a",
+        "code": "COM-001",
+        "message": "Payment failed"
+      }
+
+- request:
+    method: POST
+    url: /customer-orders
+    headers:
+      x-channel-id: "payment-refused"
+
+  response:
+    status: 400
+    body: >
+      {
+        "customerOrderId": "JOIN-5f8ac5d0-a1f6-476e-b973-61d426f0ad4a",
+        "code": "COM-001",
+        "message": "Payment failed"
+      }
+
+- request:
+    method: POST
+    url: /customer-orders
+    headers:
+      x-channel-id: "500"
+
+  response:
+    status: 400
+    body: >
+      {
+          "code": "GLOBAL_TRACKING",
+          "message": "8aa0b5c974f047f18eb1d9a91af1b477"
+      }
+
+- request:
+    method: POST
+    url: /customer-orders
+    post: .*"method":.*"BOLETO".*
+
+  response:
+    status: 200
+    body: >
+      {
+        "id": "CANCEL_PRODUCT_REQUEST_CANCEL_PRODUCT_REQUEST_46239b61-7154-45cc-abb6-3578cb13911c",
+        "status": "PENDING",
+        "steps": [
+            {
+                "step": "Payment",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            },
+            {
+                "step": "ProductInstallation",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            },
+            {
+                "step": "OfferInstallation",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            }
+        ],
+        "boleto":{
+          "methodId":"BOL-6166f38a-4c6b-4200-a6cb-37cad92b4376",
+          "payload":{
+            "boletoId":"BOL-6166f38a-4c6b-4200-a6cb-37cad92b4376",
+            "status":"BOLETO_CREATED",
+            "digitableLine":"34191.75462 02407.191234 41234.510000 8 75200000000100",
+            "url":"https://sandbox.mundipaggone.com/Boleto/ViewBoleto.aspx?3f5aaa63-9e62-44c0-9618-eefffbe81415",
+            "pdf":"https://api.mundipagg.com/core/v1/transactions/tran_vyZAR8PvFJuVR6Gk/pdf",
+            "barCode":"https://api.mundipagg.com/core/v1/transactions/tran_vyZAR8PvFJuVR6Gk/barcode",
+            "qrCode":"https://api.mundipagg.com/core/v1/transactions/tran_vyZAR8PvFJuVR6Gk/qrcode"
+          }
+        }
+      }
+
+- request:
+    method: POST
+    url: /customer-orders
+    headers:
+      x-channel-id: "^(?!payment-refused|!500).*"
+    post: .*"method":(?!"BOLETO").*
+
+  response:
+    status: 200
+    body: >
+      {
+        "id": "CANCEL_PRODUCT_REQUEST_CANCEL_PRODUCT_REQUEST_46239b61-7154-45cc-abb6-3578cb13911c",
+        "status": "PENDING",
+        "steps": [
+            {
+                "step": "Payment",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            },
+            {
+                "step": "ProductInstallation",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            },
+            {
+                "step": "OfferInstallation",
+                "status": "PENDING",
+                "startedAt": "2017-08-25",
+                "endedAt": "2017-08-25"
+            }
+        ]
+      }
+
+## Used by the controller tests
+- request:
+    method: POST
+    url: /v1/offers
+    headers:
+      X-Organization-Slug: "^PurchaseOrderCommandControllerTest$"
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      x-request-id: 1
+    body: >
+      {
+                  "plans": [
+                    {
+                      "id": "4c0dc07d-25ba-40bd-9a8e-ef9b552667de",
+                      "name": "Plano 1",
+                      "validity" : {
+                              "period" : "DAY",
+                              "duration" : 99,
+                              "unlimited" : false
+                            },
+                      "bundleId": "d96c1a89-db77-49b6-804a-eadd3c1c9698",
+                      "description": "Plano 4GB",
+                      "discountDescription": "Plano 4GB",
+                      "availability": {
+                        "begin": "2017-09-04T00:00:00",
+                        "end": "2030-12-30T23:59:59"
+                      },
+                      "reward": {
+                        "price": 0,
+                        "earn": 0
+                      },
+                      "totalPrice": {
+                        "amount": 4990,
+                        "scale": 2,
+                        "currency": "BRL",
+                        "amountFormatted": "49.90"
+                      },
+                      "orderIndex": 0,
+                      "highlighted": false,
+                      "status" : "APPROVED",
+                      "items": [
+                        {
+                          "id": "602e77a8-121b-4b00-8aaa-551528595490",
+                          "composition": {
+                            "id": "8c6c4e14-be87-4d9d-9614-790385aaaaf6",
+                            "name": "4GB",
+                            "component": {
+                              "id": "98333375-b1df-4b70-96e7-3886f6e28ea1",
+                              "name": "Internet Móvel",
+                              "systemParameters": {},
+                              "userParameters": {},
+                              "productType": {
+                                "id": "a1f19e3b-6fc6-47f3-acac-3548f78540a3",
+                                "name": "Claro Mobile",
+                                "systemParameters": {},
+                                "userParameters": {}
+                              }
+                            },
+                            "attributes": [
+                              {
+                                "componentAttributeId": "59c1d2af-1e1d-4832-ad2e-428b3e2c52f7",
+                                "name":"Volume",
+                                "type":"UNIT",
+                                "unitValue": {
+                                  "value": 400,
+                                  "scale": 2,
+                                  "unit": "GB",
+                                  "volumeFormatted": "4.00"
+                                }
+                              }
+                            ]
+                          },
+                          "price": {
+                            "amount": 4990,
+                            "scale": 2,
+                            "currency": "BRL",
+                            "amountFormatted": "49.90"
+                          },
+                          "originalPrice": {
+                            "amount": 4990,
+                            "scale": 2,
+                            "currency": "BRL",
+                            "amountFormatted": "49.90"
+                          },
+                          "discountPrice":{
+                            "amount":20001,
+                            "scale":2,
+                            "currency":"USD",
+                            "amountFormatted":"200.01"
+                          },
+                          "recurrent": false
+                        },
+                        {
+                          "id": "5adc4f3d-9180-4c20-8f29-98f72fe29582",
+                          "composition": {
+                            "id": "040ebe5b-3faa-4a52-8d27-41aab51186f5",
+                            "name": "#NET-CLARO-WIFI",
+                            "component": {
+                              "id": "b68896ca-d2cf-46e1-b725-b0d04d6e63a0",
+                              "name": "Serviços Claro",
+                              "systemParameters": {},
+                              "userParameters": {},
+                              "productType": {
+                                "id": "a1f19e3b-6fc6-47f3-acac-3548f78540b5",
+                                "name": "Claro Mobile",
+                                "systemParameters": {},
+                                "userParameters": {}
+                              }
+                            },
+                            "attributes": [
+                              {
+                                "componentAttributeId": "03ef395a-dec7-40ef-955b-5abed349e272",
+                                "name":"Internet",
+                                "type":"VALUE",
+                                "value": "WIFI"
+                              }
+                            ]
+                          },
+                          "price": {
+                            "amount": 0,
+                            "scale": 2,
+                            "currency": "BRL",
+                            "amountFormatted": "0.00"
+                          },
+                          "originalPrice": {
+                            "amount": 0,
+                            "scale": 2,
+                            "currency": "BRL",
+                            "amountFormatted": "0.00"
+                          },
+                          "discountPrice":{
+                            "amount":20001,
+                            "scale":2,
+                            "currency":"USD",
+                            "amountFormatted":"200.01"
+                          },
+                          "recurrent": false
+                        }
+                      ],
+                      "bonus": {
+                        "id": "9896a148-24d5-427d-bceb-c0e9eb8a17d9",
+                        "validity": {
+                          "period": "DAY",
+                          "duration": 30,
+                          "unlimited": false
+                        },
+                        "availability": {
+                          "begin": "2017-09-04T00:00:00",
+                          "end": "2030-12-30T23:59:59"
+                        },
+                        "description": "Bônus",
+                        "recurrent": 0,
+                        "unlimited": true,
+                        "bundleId": "b568e52d-9845-4018-8272-1ea08d7217c2",
+                        "items": [
+                          {
+                            "id": "8d273411-4a67-417b-b775-1d487921c74d",
+                            "name": "Claro Música",
+                            "component": {
+                              "id": "6bc259ba-42fc-4a2d-9e0f-4b95edc0dc6f",
+                              "name": "Claro Música",
+                              "systemParameters": {},
+                              "userParameters": {},
+                              "productType": {
+                                "id": "a1f19e3b-6fc6-47f3-acac-3548f78540a3",
+                                "name": "Claro Mobile",
+                                "systemParameters": {},
+                                "userParameters": {}
+                              }
+                            },
+                            "attributes": [
+                              {
+                                "componentAttributeId": "a21c67b1-ad93-456f-8cf9-4dcf5300bd2c",
+                                "name":"Volume",
+                                "type":"UNIT",
+                                "unitValue": {
+                                  "value": -1,
+                                  "scale": 0,
+                                  "unit": "UNLIMITED",
+                                  "volumeFormatted": "-1"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "id": "f7d7dde7-adb5-4bb6-bbd3-258512c3e982",
+                            "name": "Whatsapp à vontade",
+                            "component": {
+                              "id": "a9dbba78-a0c4-450f-a795-101fe0ccbb0a",
+                              "name": "Whatsapp a vontade",
+                              "systemParameters": {},
+                              "userParameters": {},
+                              "productType": {
+                                "id": "a1f19e3b-6fc6-47f3-acac-3548f78540a3",
+                                "name": "Claro Mobile",
+                                "systemParameters": {},
+                                "userParameters": {}
+                              }
+                            },
+                            "attributes": [
+                              {
+                                "componentAttributeId": "c59f9285-70ab-4f2b-be1d-86938431270f",
+                                "name":"Volume",
+                                "type":"UNIT",
+                                "unitValue": {
+                                  "value": -1,
+                                  "scale": 0,
+                                  "unit": "UNLIMITED",
+                                  "volumeFormatted": "-1"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "id": "99ea11ef-4d44-44d3-8b29-4bdccc43a96a",
+                            "name": "Claro Vídeo",
+                            "component": {
+                              "id": "00e3c0c8-80c2-4d49-9287-59fe6c2b4191",
+                              "name": "Claro Vídeo",
+                              "systemParameters": {},
+                              "userParameters": {},
+                              "productType": {
+                                "id": "a1f19e3b-6fc6-47f3-acac-3548f78540a3",
+                                "name": "Claro Mobile",
+                                "systemParameters": {},
+                                "userParameters": {}
+                              }
+                            },
+                            "attributes": [
+                              {
+                                "componentAttributeId": "db10e0d8-113a-433c-844d-221b6997e6c0",
+                                "name":"Volume",
+                                "type":"UNIT",
+                                "unitValue": {
+                                  "value": -1,
+                                  "scale": 0,
+                                  "unit": "UNLIMITED",
+                                  "volumeFormatted": "-1"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "customPlanConfigurations": [
+                   {
+                              "id": "9fb38ac3-10ee-460e-9772-358c0beaddd2",
+                              "name": "Custom plan 1",
+                              "validity" : {
+                                      "period" : "DAY",
+                                      "duration" : 99,
+                                      "unlimited" : false
+                                    },
+                              "mandatory": false,
+                              "orderIndex": 0,
+                              "component": {
+                                  "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+                                  "name": "LIGAÇÃO",
+                                  "systemParameters": {
+                                      "CODE": "LIGACAO"
+                                  },
+                                  "userParameters": {},
+                                  "productType": {
+                                      "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                                      "name": "MOBILE",
+                                      "systemParameters": {
+                                          "CODE": "MOBILE_LINE"
+                                      },
+                                      "userParameters": {}
+                                  }
+                              },
+                              "items": [
+                                  {
+                                      "id": "65745bb1-ba36-4476-9e64-3201b7e29821",
+                                      "composition": {
+                                          "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+                                          "name": "100 MINUTOS",
+                                          "attributes": [
+                                              {
+                                                  "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                                                  "name":"Volume",
+                                                  "type":"UNIT",
+                                                  "unitValue": {
+                                                      "value": 100,
+                                                      "scale": 2,
+                                                      "unit": "Minutos",
+                                                      "volumeFormatted": "1.00"
+                                                  }
+                                              }
+                                          ]
+                                      },
+                                      "price": {
+                                          "amount": 100,
+                                          "scale": 2,
+                                          "currency": "BRL",
+                                          "amountFormatted": "1.00"
+                                      },
+                                      "originalPrice": {
+                                          "amount": 100,
+                                          "scale": 2,
+                                          "currency": "BRL",
+                                          "amountFormatted": "1.00"
+                                      },
+                                      "discountPrice": {
+                                          "amount": 0,
+                                          "scale": 0,
+                                          "currency": "BRL",
+                                          "amountFormatted": "0.00"
+                                      },
+                                      "reward": {
+                                          "price": 0,
+                                          "earn": 0
+                                      },
+                                      "highlighted": false,
+                                      "availability": {
+                                          "begin": "2017-08-29T00:00:00",
+                                          "end": "2050-08-29T23:59:59"
+                                      }
+                                  },
+                                  {
+                                      "id": "7898a066-f693-413d-818f-baab508e7333",
+                                      "composition": {
+                                          "id": "3374471c-b934-4c0f-a204-eadfd846efe6",
+                                          "name": "200 MINUTOS",
+                                          "attributes": [
+                                              {
+                                                  "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                                                  "name":"Volume",
+                                                  "type":"UNIT",
+                                                  "unitValue": {
+                                                      "value": 200,
+                                                      "scale": 2,
+                                                      "unit": "Minutos",
+                                                      "volumeFormatted": "2.00"
+                                                  }
+                                              }
+                                          ]
+                                      },
+                                      "price": {
+                                          "amount": 200,
+                                          "scale": 2,
+                                          "currency": "BRL",
+                                          "amountFormatted": "2.00"
+                                      },
+                                      "originalPrice": {
+                                          "amount": 200,
+                                          "scale": 2,
+                                          "currency": "BRL",
+                                          "amountFormatted": "2.00"
+                                      },
+                                      "discountPrice": {
+                                          "amount": 0,
+                                          "scale": 0,
+                                          "currency": "BRL",
+                                          "amountFormatted": "0.00"
+                                      },
+                                      "reward": {
+                                          "price": 0,
+                                          "earn": 0
+                                      },
+                                      "highlighted": false,
+                                      "availability": {
+                                          "begin": "2017-08-29T00:00:00",
+                                          "end": "2050-08-29T23:59:59"
+                                      }
+                                  }
+                              ]
+                          }
+                  ],
+                  "addons": [
+                          {
+                            "id" : "1119c2db-5586-499e-a447-a8f365595f3b",
+                            "name": "Addon 1",
+                            "validity" : {
+                              "period" : "DAY",
+                              "duration" : 99,
+                              "unlimited" : false
+                            },
+                            "availability" : {
+                              "begin" : "2017-01-01T00:00:00",
+                              "end" : "2030-12-31T23:59:59"
+                            },
+                            "reward" : {
+                              "price" : 1000,
+                              "earn" : 50
+                            },
+                            "totalPrice" : {
+                              "amount" : 10000,
+                              "scale" : 2,
+                              "currency" : "USD",
+                              "amountFormatted" : "100.00"
+                            },
+                            "highlighted" : false,
+                            "description" : "description addon",
+                            "discountDescription" : "discount description addon",
+                            "status" : "ARCHIVED",
+                            "items" : [ {
+                              "id" : "1111c2db-5586-499e-a447-a8f365595f3b",
+                              "composition" : {
+                                "id" : "22222222-2222-2222-2222-b7ab8c511ac6",
+                                "name" : "Internet 4.5GB",
+                                "component" : {
+                                  "id" : "22222222-8182-4987-b14e-b7ab8c511ac6",
+                                  "name" : "Internet",
+                                  "systemParameters" : {
+                                    "EXTERNAL_CODE" : "CODE1",
+                                    "PRODUCT" : "TYPE"
+                                  },
+                                  "userParameters" : {
+                                    "CEP" : "Cep Number",
+                                    "NUM" : "300"
+                                  },
+                                  "productType" : {
+                                    "id" : "11111111-8182-4987-b14e-b7ab8c511ac6",
+                                    "name" : "Mobile",
+                                    "systemParameters" : {
+                                      "EXTERNAL_CODE" : "CODE1",
+                                      "OTHER_CODE" : "CODE2"
+                                    },
+                                    "userParameters" : {
+                                      "CEP" : "Cep Number"
+                                    }
+                                  }
+                                },
+                                "attributes" : [ {
+                                  "componentAttributeId" : "22222222-2222-1111-b14e-b7ab8c511ac6",
+                                  "name" : "Volume",
+                                  "type" : "UNIT",
+                                  "unitValue" : {
+                                    "value" : 45,
+                                    "scale" : 1,
+                                    "unit" : "GB",
+                                    "volumeFormatted" : "4.5"
+                                  }
+                                }, {
+                                  "componentAttributeId" : "22222222-2222-2222-b14e-b7ab8c511ac6",
+                                  "name" : "Velocidade",
+                                  "type" : "VALUE",
+                                  "value" : "4MB"
+                                } ]
+                              },
+                              "price" : {
+                                "amount" : 10000,
+                                "scale" : 2,
+                                "currency" : "USD",
+                                "amountFormatted" : "100.00"
+                              },
+                              "discountPrice": {
+                                  "amount": 0,
+                                  "scale": 0,
+                                  "currency": "BRL",
+                                  "amountFormatted": "0.00"
+                              },
+                              "renewalType" : "RENEW"
+                            } ]
+                          }, {
+                            "id" : "2229c2db-5586-499e-a447-a8f365595f3b",
+                            "name": "Addon 2",
+                            "validity" : {
+                              "period" : "DAY",
+                              "duration" : 99,
+                              "unlimited" : false
+                            },
+                            "availability" : {
+                              "begin" : "2017-01-01T00:00:00",
+                              "end" : "2030-12-31T23:59:59"
+                            },
+                            "reward" : {
+                              "price" : 2000,
+                              "earn" : 20
+                            },
+                            "totalPrice" : {
+                              "amount" : 20003,
+                              "scale" : 2,
+                              "currency" : "USD",
+                              "amountFormatted" : "200.03"
+                            },
+                            "highlighted" : false,
+                            "description" : "description addon",
+                            "discountDescription" : "discount description addon",
+                            "bundleId" : "111497db-924c-46da-8d44-b3bd4c98f8d2",
+                            "status" : "APPROVED",
+                            "items" : [ {
+                              "id" : "2221c2db-5586-499e-a447-a8f365595f3b",
+                              "composition" : {
+                                "id" : "22222222-2222-2222-2222-b7ab8c511ac6",
+                                "name" : "Internet 4.5GB",
+                                "component" : {
+                                  "id" : "22222222-8182-4987-b14e-b7ab8c511ac6",
+                                  "name" : "Internet",
+                                  "systemParameters" : {
+                                    "EXTERNAL_CODE" : "CODE1",
+                                    "PRODUCT" : "TYPE"
+                                  },
+                                  "userParameters" : {
+                                    "CEP" : "Cep Number",
+                                    "NUM" : "300"
+                                  },
+                                  "productType" : {
+                                    "id" : "11111111-8182-4987-b14e-b7ab8c511ac6",
+                                    "name" : "Mobile",
+                                    "systemParameters" : {
+                                      "EXTERNAL_CODE" : "CODE1",
+                                      "OTHER_CODE" : "CODE2"
+                                    },
+                                    "userParameters" : {
+                                      "CEP" : "Cep Number"
+                                    }
+                                  }
+                                },
+                                "attributes" : [ {
+                                  "componentAttributeId" : "22222222-2222-1111-b14e-b7ab8c511ac6",
+                                  "name" : "Volume",
+                                  "type" : "UNIT",
+                                  "unitValue" : {
+                                    "value" : 45,
+                                    "scale" : 1,
+                                    "unit" : "GB",
+                                    "volumeFormatted" : "4.5"
+                                  }
+                                }, {
+                                  "componentAttributeId" : "22222222-2222-2222-b14e-b7ab8c511ac6",
+                                  "name" : "Velocidade",
+                                  "type" : "VALUE",
+                                  "value" : "4MB"
+                                } ]
+                              },
+                              "price" : {
+                                "amount" : 10001,
+                                "scale" : 2,
+                                "currency" : "USD",
+                                "amountFormatted" : "100.01"
+                              },
+                              "discountPrice": {
+                                  "amount": 0,
+                                  "scale": 0,
+                                  "currency": "BRL",
+                                  "amountFormatted": "0.00"
+                              },
+                              "renewalType" : "REFILL"
+                            }, {
+                              "id" : "2222c2db-5586-499e-a447-a8f365595f3b",
+                              "composition" : {
+                                "id" : "11111111-1111-1111-1111-b7ab8c511ac6",
+                                "name" : "Ligação 120 Minutos",
+                                "component" : {
+                                  "id" : "11111111-1111-4987-b14e-b7ab8c511ac6",
+                                  "name" : "Ligação Local",
+                                  "systemParameters" : {
+                                    "EXTERNAL_CODE" : "CODE1",
+                                    "PRODUCT" : "TYPE"
+                                  },
+                                  "userParameters" : {
+                                    "CEP" : "Cep Number",
+                                    "NUM" : "300"
+                                  },
+                                  "productType" : {
+                                    "id" : "11111111-8182-4987-b14e-b7ab8c511ac6",
+                                    "name" : "Mobile",
+                                    "systemParameters" : {
+                                      "EXTERNAL_CODE" : "CODE1",
+                                      "OTHER_CODE" : "CODE2"
+                                    },
+                                    "userParameters" : {
+                                      "CEP" : "Cep Number"
+                                    }
+                                  }
+                                },
+                                "attributes" : [ {
+                                  "componentAttributeId" : "11111111-1111-1111-b14e-b7ab8c511ac6",
+                                  "name" : "Time",
+                                  "type" : "UNIT",
+                                  "unitValue" : {
+                                    "value" : 120,
+                                    "scale" : 0,
+                                    "unit" : "MINUTES",
+                                    "volumeFormatted" : "120"
+                                  }
+                                } ]
+                              },
+                              "price" : {
+                                "amount" : 10002,
+                                "scale" : 2,
+                                "currency" : "USD",
+                                "amountFormatted" : "100.02"
+                              },
+                              "discountPrice": {
+                                  "amount": 0,
+                                  "scale": 0,
+                                  "currency": "BRL",
+                                  "amountFormatted": "0.00"
+                              },
+                              "renewalType" : "REFILL"
+                            } ]
+                        }
+                  ],
+                  "sales": []
+                }
+
+
+## Used by the postman collection
+- request:
+    method: POST
+    url: /v1/offers
+    headers:
+      X-Organization-Slug: "^realwave_.*$"
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      x-request-id: 2
+    body: >
+         {
+             "plans": [
+                 {
+                     "id": "504999fd-f0c4-4eb0-967c-35493edbe493",
+                     "name": "Plano 1",
+                     "validity" : {
+                             "period" : "DAY",
+                             "duration" : 99,
+                             "unlimited" : false
+                           },
+                     "bundleId": "c6bb8f5c-2182-479f-b272-21abe0109865",
+                     "description": "1GB de Internet limitado e 100Minutos de ligação para qualquer operadora",
+                     "availability": {
+                         "begin": "2017-08-29T00:00:00",
+                         "end": "2050-08-29T23:59:59"
+                     },
+                     "reward": {
+                         "price": 0,
+                         "earn": 0
+                     },
+                     "totalPrice": {
+                         "amount": 1100,
+                         "scale": 2,
+                         "currency": "BRL",
+                         "amountFormatted": "11.00"
+                     },
+                     "orderIndex": 0,
+                     "highlighted": false,
+                     "status" : "APPROVED",
+                     "items": [
+                         {
+                             "id": "990ddd1a-8ce4-4ec8-88f9-06968e972dd1",
+                             "composition": {
+                                 "id": "f33078cf-ac53-4346-9a40-fd2abbabdc42",
+                                 "name": "INTERNET 4G 1GB",
+                                 "component": {
+                                     "id": "c7a8730b-9ec2-4375-a1d3-c989c25de8ef",
+                                     "name": "INTERNET 4G",
+                                     "systemParameters": {
+                                         "CODE": "NET_4G"
+                                     },
+                                     "userParameters": {},
+                                     "productType": {
+                                         "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                                         "name": "MOBILE",
+                                         "systemParameters": {
+                                             "CODE": "MOBILE_LINE"
+                                         },
+                                         "userParameters": {}
+                                     }
+                                 },
+                                 "attributes": [
+                                     {
+                                         "componentAttributeId": "5c08a8ca-5ba1-482f-b72c-d0a658cf9bf7",
+                                         "name":"Volume",
+                                         "type":"UNIT",
+                                         "unitValue": {
+                                             "value": 1,
+                                             "scale": 2,
+                                             "unit": "GB",
+                                             "volumeFormatted": "0.01"
+                                         }
+                                     }
+                                 ]
+                             },
+                             "price": {
+                                 "amount": 100,
+                                 "scale": 2,
+                                 "currency": "BRL",
+                                 "amountFormatted": "1.00"
+                             },
+                             "originalPrice": {
+                                 "amount": 100,
+                                 "scale": 2,
+                                 "currency": "BRL",
+                                 "amountFormatted": "1.00"
+                             },
+                             "discountPrice":{
+                               "amount":20001,
+                               "scale":2,
+                               "currency":"USD",
+                               "amountFormatted":"200.01"
+                             },
+                             "recurrent": false
+                         },
+                         {
+                             "id": "c68931dd-fe4e-4cc3-a8dd-ec77f3f3eeb0",
+                             "composition": {
+                                 "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+                                 "name": "100 MINUTOS",
+                                 "component": {
+                                     "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+                                     "name": "LIGAÇÃO",
+                                     "systemParameters": {
+                                         "CODE": "LIGACAO"
+                                     },
+                                     "userParameters": {},
+                                     "productType": {
+                                         "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                                         "name": "MOBILE",
+                                         "systemParameters": {
+                                             "CODE": "MOBILE_LINE"
+                                         },
+                                         "userParameters": {}
+                                     }
+                                 },
+                                 "attributes": [
+                                     {
+                                         "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                                         "name":"Volume",
+                                         "type":"UNIT",
+                                         "unitValue": {
+                                             "value": 100,
+                                             "scale": 2,
+                                             "unit": "Minutos",
+                                             "volumeFormatted": "1.00"
+                                         }
+                                     }
+                                 ]
+                             },
+                             "price": {
+                                 "amount": 1000,
+                                 "scale": 2,
+                                 "currency": "BRL",
+                                 "amountFormatted": "10.00"
+                             },
+                             "originalPrice": {
+                                 "amount": 1000,
+                                 "scale": 2,
+                                 "currency": "BRL",
+                                 "amountFormatted": "10.00"
+                             },
+                             "discountPrice":{
+                               "amount":20001,
+                               "scale":2,
+                               "currency":"USD",
+                               "amountFormatted":"200.01"
+                             },
+                             "recurrent": false
+                         }
+                     ]
+                 }
+             ],
+             "customPlanConfigurations": [],
+             "addons": [],
+             "sales": []
+         }
+
+
+## Default offers response
+- request:
+    method: POST
+    url: /v1/offers
+    headers:
+      X-Organization-Slug: "^((?!PurchaseOrderCommandControllerTest).)*$"
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      x-request-id: 3
+    body: >
+      {
+        "plans": [
+          {
+            "id": "504999fd-f0c4-4eb0-967c-35493edbe493",
+            "name": "Plano 1",
+            "validity" : {
+                    "period" : "DAY",
+                    "duration" : 99,
+                    "unlimited" : false
+                  },
+            "bundleId": "c6bb8f5c-2182-479f-b272-21abe0109865",
+            "description": "1GB de Internet limitado e 100Minutos de ligação para qualquer operadora",
+            "availability": {
+              "begin": "2017-08-29T00:00:00",
+              "end": "2050-08-29T23:59:59"
+            },
+            "reward": {
+              "price": 0,
+              "earn": 0
+            },
+            "totalPrice": {
+              "amount": 1100,
+              "scale": 2,
+              "currency": "BRL",
+              "amountFormatted": "11.00"
+            },
+            "orderIndex": 0,
+            "highlighted": false,
+            "status" : "APPROVED",
+            "items": [
+              {
+                "id": "990ddd1a-8ce4-4ec8-88f9-06968e972dd1",
+                "composition": {
+                  "id": "f33078cf-ac53-4346-9a40-fd2abbabdc42",
+                  "name": "INTERNET 4G 1GB",
+                  "component": {
+                    "id": "c7a8730b-9ec2-4375-a1d3-c989c25de8ef",
+                    "name": "INTERNET 4G",
+                    "systemParameters": {
+                      "CODE": "NET_4G"
+                    },
+                    "userParameters": {},
+                    "productType": {
+                      "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                      "name": "MOBILE",
+                      "systemParameters": {
+                        "CODE": "MOBILE_LINE"
+                      },
+                      "userParameters": {}
+                    }
+                  },
+                  "attributes": [
+                    {
+                      "componentAttributeId": "5c08a8ca-5ba1-482f-b72c-d0a658cf9bf7",
+                      "name":"Volume",
+                      "type":"UNIT",
+                      "unitValue": {
+                        "value": 1,
+                        "scale": 2,
+                        "unit": "GB",
+                        "volumeFormatted": "0.01"
+                      }
+                    }
+                  ]
+                },
+                "price": {
+                  "amount": 100,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "1.00"
+                },
+                "originalPrice": {
+                  "amount": 100,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "1.00"
+                },
+                "discountPrice":{
+                  "amount":20001,
+                  "scale":2,
+                  "currency":"USD",
+                  "amountFormatted":"200.01"
+                },
+                "recurrent": false
+              },
+              {
+                "id": "c68931dd-fe4e-4cc3-a8dd-ec77f3f3eeb0",
+                "composition": {
+                  "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+                  "name": "100 MINUTOS",
+                  "component": {
+                    "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+                    "name": "LIGAÇÃO",
+                    "systemParameters": {
+                      "CODE": "LIGACAO"
+                    },
+                    "userParameters": {},
+                    "productType": {
+                      "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                      "name": "MOBILE",
+                      "systemParameters": {
+                        "CODE": "MOBILE_LINE"
+                      },
+                      "userParameters": {}
+                    }
+                  },
+                  "attributes": [
+                    {
+                      "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                      "name":"Volume",
+                      "type":"UNIT",
+                      "unitValue": {
+                        "value": 100,
+                        "scale": 2,
+                        "unit": "Minutos",
+                        "volumeFormatted": "1.00"
+                      }
+                    }
+                  ]
+                },
+                "price": {
+                  "amount": 1000,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "10.00"
+                },
+                "originalPrice": {
+                  "amount": 1000,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "10.00"
+                },
+                "discountPrice":{
+                  "amount":20001,
+                  "scale":2,
+                  "currency":"USD",
+                  "amountFormatted":"200.01"
+                },
+                "recurrent": false
+              }
+            ]
+          }
+        ],
+        "customPlanConfigurations": [
+          {
+            "id": "9fb38ac3-10ee-460e-9772-358c0beaddd2",
+            "name": "Custom Plan 1",
+            "validity" : {
+                    "period" : "DAY",
+                    "duration" : 99,
+                    "unlimited" : false
+                  },
+            "mandatory": false,
+            "orderIndex": 0,
+            "component": {
+              "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+              "name": "LIGAÇÃO",
+              "systemParameters": {
+                "CODE": "LIGACAO"
+              },
+              "userParameters": {},
+              "productType": {
+                "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                "name": "MOBILE",
+                "systemParameters": {
+                  "CODE": "MOBILE_LINE"
+                },
+                "userParameters": {}
+              }
+            },
+            "items": [
+              {
+                "id": "65745bb1-ba36-4476-9e64-3201b7e29821",
+                "composition": {
+                  "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+                  "name": "100 MINUTOS",
+                  "attributes": [
+                    {
+                      "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                      "name":"Volume",
+                      "type":"UNIT",
+                      "unitValue": {
+                        "value": 100,
+                        "scale": 2,
+                        "unit": "Minutos",
+                        "volumeFormatted": "1.00"
+                      }
+                    }
+                  ]
+                },
+                "price": {
+                  "amount": 100,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "1.00"
+                },
+                "originalPrice": {
+                  "amount": 100,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "1.00"
+                },
+                "discountPrice": {
+                    "amount": 0,
+                    "scale": 0,
+                    "currency": "BRL",
+                    "amountFormatted": "0.00"
+                },
+                "reward": {
+                  "price": 0,
+                  "earn": 0
+                },
+                "highlighted": false,
+                "availability": {
+                  "begin": "2017-08-29T00:00:00",
+                  "end": "2050-08-29T23:59:59"
+                }
+              },
+              {
+                "id": "7898a066-f693-413d-818f-baab508e7333",
+                "composition": {
+                  "id": "3374471c-b934-4c0f-a204-eadfd846efe6",
+                  "name": "200 MINUTOS",
+                  "attributes": [
+                    {
+                      "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                      "name":"Volume",
+                      "type":"UNIT",
+                      "unitValue": {
+                        "value": 200,
+                        "scale": 2,
+                        "unit": "Minutos",
+                        "volumeFormatted": "2.00"
+                      }
+                    }
+                  ]
+                },
+                "price": {
+                  "amount": 200,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "2.00"
+                },
+                "originalPrice": {
+                  "amount": 200,
+                  "scale": 2,
+                  "currency": "BRL",
+                  "amountFormatted": "2.00"
+                },
+                "discountPrice": {
+                    "amount": 0,
+                    "scale": 0,
+                    "currency": "BRL",
+                    "amountFormatted": "0.00"
+                },
+                "reward": {
+                  "price": 0,
+                  "earn": 0
+                },
+                "highlighted": false,
+                "availability": {
+                  "begin": "2017-08-29T00:00:00",
+                  "end": "2050-08-29T23:59:59"
+                }
+              }
+            ]
+          }
+        ],
+        "addons": [],
+        "sales": []
+      }
+
+# MEMBER GET MEMBER
+- request:
+    method: GET
+    url: ^/v2/member/[\d\w]{6}/validate$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+
+- request:
+    method: GET
+    url: ^/v2/member/([\d\w]{1,5}|[\d\w]{7,})/validate$
+
+  response:
+    status: 400
+    headers:
+      content-type: application/json
+    body: >
+      {
+          "fields": {
+              "code": [
+                  "O tamanho deve ser igual a 6"
+              ]
+          }
+      }
+
+# CALLBACK
+- request:
+    method: POST
+    url: /purchaseordercallback
+
+  response:
+    status: 200
+
+# CUSTOMER SEARCH
+
+- request:
+    method: GET
+    url: ^/api/customers/(.+)/products/(invalid)$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "id" : "<%url.1%>",
+        "status" : "INACTIVE"
+      }
+
+- request:
+    method: GET
+    url: ^/api/customers/(.+)/products/(notfound)$
+
+  response:
+    status: 404
+    headers:
+      content-type: application/json
+
+- request:
+    method: GET
+    url: ^/api/customers/(.+)/products/(.+)$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "id" : "<%url.1%>",
+        "status" : "ACTIVE"
+      }
+
+- request:
+    method: GET
+    url: ^/api/customers/(invalid)$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "id" : "<%url.1%>",
+        "status" : "INACTIVE"
+      }
+
+- request:
+    method: GET
+    url: ^/api/customers/(notfound)$
+
+  response:
+    status: 404
+    headers:
+      content-type: application/json
+
+- request:
+    method: GET
+    url: ^/api/customers/(.+)$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "id" : "<%url.1%>",
+        "status" : "ACTIVE"
+      }
+
+- request:
+    method: GET
+    url: ^/v1/coupons/code/inactive/customer/(.+)/validation$
+
+  response:
+    status: 400
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "code" : "CODE",
+        "message": "MESSAGE"
+      }
+
+- request:
+    method: GET
+    url: ^/v1/coupons/code/error/customer/(.+)/validation$
+
+  response:
+    status: 500
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "code" : "2FC3CB"
+      }
+
+- request:
+    method: GET
+    url: ^/v1/coupons/code/VIRAFLEX20/customer/(.+)/validation$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+          "id": "59f5c6eb-b0cd-4063-ad00-40bae6866963",
+          "code": "VIRAFLEX20",
+          "couponType": "REUSABLE",
+          "status": "ACTIVATED",
+          "description": "Ganhe 20 reais na primeira mensalidade",
+          "lifeCycle": {
+              "startDate": "2020-07-16T03:00:00",
+              "endDate": "2030-07-17T02:59:59"
+          },
+          "amountAvailable": -1,
+          "userLimit": -1,
+          "channels": [],
+          "reward": {
+              "type": "DISCOUNT_MONEY",
+              "discounts": [
+                  {
+                      "value": {
+                          "amount": 2000,
+                          "scale": 2,
+                          "currency": "BRL"
+                      }
+                  }
+              ]
+          },
+          "couponAmountUsed": 0
+      }
+
+- request:
+    method: GET
+    url: ^/v1/coupons/code/BONUS_15GB_MIGRACOES/customer/(.+)/validation$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+          "id": "a67ce257-24c4-4616-b008-cd450d1f21ca",
+          "code": "BONUS_15GB_MIGRACOES",
+          "couponType": "REUSABLE",
+          "status": "ACTIVATED",
+          "description": "BONUS_15GB_MIGRACOES\n",
+          "lifeCycle": {
+              "startDate": "2021-10-06T03:00:00",
+              "endDate": "2099-10-07T02:59:59.999"
+          },
+          "amountAvailable": -1,
+          "userLimit": -1,
+          "channels": [],
+          "reward": {
+              "type": "RESCUE_SERVICE",
+              "service": {
+                  "id": "488bf085-2f85-4a67-9a74-e58209b590e3",
+                  "name": "15GB",
+                  "validity": 30
+              }
+          },
+          "couponAmountUsed": 0
+      }
+
+- request:
+    method: GET
+    url: ^/v1/coupons/code/(.+)/customer/(.+)/validation$
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+         "id":"d86493d1-630d-41a9-9c5a-45309342acc1",
+         "code":"2FC3CB",
+         "couponType":"REUSABLE",
+         "status":"ACTIVATED",
+         "description":"Some description here",
+         "lifeCycle":{
+            "startDate":"2017-12-12T17:54:19.939",
+            "endDate":"2017-12-18T17:54:19.939"
+         },
+         "amountAvailable":10,
+         "userLimit":1,
+         "usageLimitPeriod":30,
+         "channels":[],
+         "terms":"Some term here",
+
+         "reward":{
+            "type":"DISCOUNT_MONEY",
+            "discounts":[
+               {
+                  "value":{
+                     "amount":1000,
+                     "scale":2,
+                     "currency":"BRL"
+                  }
+               }
+            ],
+            "service":{
+               "id":"65745bb1-ba36-4476-9e64-3201b7e29821",
+               "name":"Some name of composition here",
+               "validity":30
+            }
+         },
+         "couponAmountUsed":0
+      }
+
+- request:
+    method: POST
+    url: ^/v1/offers/validate$
+    headers:
+      x-organization-slug: "error"
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "errors" : [ {
+                  "id" : "1119c2db-5586-499e-a447-a8f365595f3b",
+                  "type" : "ADDON",
+                  "messages" : [ "The informed validity is different from the validity registered for that offer.", "The informed reward is different from the reward registered for that offer.", "The price of this item is different from the price registered.", "The renewal type of this item is different from the registered type.", "Bonus not found." ]
+                } ],
+        "success" : [ {
+          "id" : "1119c2db-5586-499e-a447-a8f365595f3b",
+          "type" : "ADDON"
+        } ]
+      }
+
+- request:
+    method: POST
+    url: ^/v1/offers/validate$
+    headers:
+      x-organization-slug: "^(?!error).*"
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+      {
+        "errors" : [],
+        "success" : [ {
+          "id" : "1119c2db-5586-499e-a447-a8f365595f3b",
+          "type" : "ADDON"
+        } ]
+      }
+
+- request:
+    method: GET
+    url: ^/compositions/(.+)$
+    query:
+      componentMode: open
+
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    body: >
+
+      {
+        "id" : "65745bb1-ba36-4476-9e64-3201b7e29821",
+        "name" : "Internet 20GB",
+        "description" : "Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum",
+        "component" : {
+          "id" : "22222222-8182-4987-b14e-b7ab8c511ac6",
+          "name" : "Internet",
+          "status" : "APPROVED",
+          "productType" : {
+            "id" : "11111111-8182-4987-b14e-b7ab8c511ac6",
+            "name" : "Internet",
+            "status" : "APPROVED",
+            "categories" : [ {
+              "id" : "962ac7c4-3bc2-4382-ae63-88e84da5761a",
+              "name" : "Internacional",
+              "children" : [ ]
+            }, {
+              "id" : "8811fd92-d80a-4837-a8d5-34e44dca60d7",
+              "name" : "Nacional",
+              "children" : [ ]
+            } ],
+            "systemParameters" : {
+              "RESOURCE_CONNECTOR" : "CS17"
+            },
+            "userParameters" : {
+              "CEP" : "38400-000"
+            },
+            "channelParameters" : {
+              "CHANNEL" : "CHANNEL"
+            }
+          },
+          "attributes" : [ {
+            "id" : "433e4c61-4ee1-4c35-8845-c33d8701e07f",
+            "type" : "VALUE",
+            "name" : "Velocidade",
+            "values" : [ "10MB", "20GB" ]
+          }, {
+            "id" : "9ceb349b-917b-4248-b937-46afbaf61ebc",
+            "type" : "UNIT",
+            "name" : "Volume",
+            "units" : [ "MB", "GB", "UNLIMITED" ]
+          }, {
+            "id" : "9876abcd-1234-abcd-8845-c33d8701e0ac",
+            "type" : "TEXT",
+            "name" : "Imagem"
+          } ],
+          "systemParameters" : {
+            "RESOURCE_CONNECTOR" : "CS17"
+          },
+          "userParameters" : {
+            "CEP" : "38400-000"
+          },
+          "channelParameters" : {
+            "CHANNEL" : "CHANNEL"
+          }
+        },
+        "status" : "ARCHIVED",
+        "attributes" : [ {
+          "componentAttribute" : {
+            "id" : "9ceb349b-917b-4248-b937-46afbaf61ebc",
+            "type" : "UNIT",
+            "name" : "Volume",
+            "units" : [ "MB", "GB", "UNLIMITED" ]
+          },
+          "unitValue" : {
+            "value" : 10000,
+            "scale" : 2,
+            "unit" : "GB",
+            "volumeFormatted" : "100.00"
+          },
+          "type" : "UNIT"
+        }, {
+          "componentAttribute" : {
+            "id" : "433e4c61-4ee1-4c35-8845-c33d8701e07f",
+            "type" : "VALUE",
+            "name" : "Velocidade",
+            "values" : [ "10MB", "20GB" ]
+          },
+          "value" : "10MB",
+          "type" : "VALUE"
+        }, {
+          "componentAttribute" : {
+            "id" : "9876abcd-1234-abcd-8845-c33d8701e0ac",
+            "type" : "TEXT",
+            "name" : "Imagem"
+          },
+          "text" : "/local/imgs/imagem.png",
+          "type" : "TEXT"
+        } ]
+      }
+

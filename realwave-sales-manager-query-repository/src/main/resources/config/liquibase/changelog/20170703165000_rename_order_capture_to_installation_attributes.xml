@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="20170703165000-1" author="rw">
+        <renameTable newTableName="installation_attributes"
+                     oldTableName="order_capture_item"/>
+    </changeSet>
+
+    <changeSet id="20170703165000-2" author="rw">
+        <dropPrimaryKey constraintName="pk_order_capture_item"
+                        tableName="installation_attributes"/>
+    </changeSet>
+
+    <changeSet id="20170703165000-3" author="rw">
+        <addPrimaryKey columnNames="purchase_order_id, key"
+                       constraintName="pk_installation_attributes"
+                       tableName="installation_attributes"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,313 @@
+{
+  "plans":[
+
+  ],
+  "customPlanConfigurations":[
+    {
+      "id":"c122d069-0781-4adf-bcb8-fa37c609907b",
+      "validity":{
+        "period":"DAY",
+        "duration":10,
+        "unlimited":false
+      },
+      "mandatory":false,
+      "orderIndex":0,
+      "component":{
+        "id":"fc03cc53-030d-4fc4-8e7f-861fd2bcc182",
+        "name":"Call",
+        "systemParameters":{
+
+        },
+        "userParameters":{
+
+        },
+        "productType":{
+          "id":"e2ea4e38-9756-4de3-a016-64bc240ad6de",
+          "name":"Mobile",
+          "systemParameters":{
+
+          },
+          "userParameters":{
+
+          }
+        }
+      },
+      "items":[
+        {
+          "id":"1225233c-9caf-4a8f-8968-82b5e00c852d",
+          "composition":{
+            "id":"bf097229-4879-49fb-9944-204a07b3e94b",
+            "name":"100 M",
+            "attributes":[
+              {
+                "componentAttributeId":"73514584-9dab-472f-8456-7389338c3039",
+                "name":"VOLUME",
+                "type":"UNIT",
+                "unitValue":{
+                  "value":10000,
+                  "scale":2,
+                  "unit":"MINUTE",
+                  "volumeFormatted":"100.00"
+                }
+              }
+            ]
+          },
+          "price":{
+            "amount":1899,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"18.99"
+          },
+          "originalPrice":{
+            "amount":2000,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"20.00"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward":{
+            "price":0,
+            "earn":0
+          },
+          "highlighted":false,
+          "availability":{
+            "begin":"2018-04-03T03:00:00",
+            "end":"2019-05-13T02:59:59"
+          },
+          "offerParameters":{
+
+          },
+          "recurrent":true
+        }
+      ]
+    },
+    {
+      "id":"b65b4328-64c3-473a-ac28-eb3142a3a4bf",
+      "validity":{
+        "period":"DAY",
+        "duration":10,
+        "unlimited":false
+      },
+      "mandatory":true,
+      "orderIndex":4,
+      "component":{
+        "id":"625cdb80-0a94-4d3b-a49e-27934daaef5f",
+        "name":"Internet",
+        "systemParameters":{
+
+        },
+        "userParameters":{
+
+        },
+        "productType":{
+          "id":"84532d7d-05c0-455c-8cef-cd7c753f0218",
+          "name":"Mobile_line 2",
+          "systemParameters":{
+            "teste":"teste"
+          },
+          "userParameters":{
+
+          }
+        }
+      },
+      "items":[
+        {
+          "id":"3fce9379-bf5c-4975-8f99-cb83f01c0afc",
+          "composition":{
+            "id":"236e0c7a-b357-44a7-b301-896608a6c28b",
+            "name":"500 MB",
+            "attributes":[
+              {
+                "componentAttributeId":"1d2ecab5-a894-426f-897a-0199692e62e6",
+                "name":"tamanho",
+                "type":"UNIT",
+                "unitValue":{
+                  "value":50000,
+                  "scale":2,
+                  "unit":"MB",
+                  "volumeFormatted":"500.00"
+                }
+              }
+            ]
+          },
+          "price":{
+            "amount":1299,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"12.99"
+          },
+          "originalPrice":{
+            "amount":1299,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"12.99"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward":{
+            "price":0,
+            "earn":0
+          },
+          "highlighted":false,
+          "availability":{
+            "begin":"2018-04-03T03:00:00",
+            "end":"2019-05-13T02:59:59"
+          },
+          "offerParameters":{
+
+          },
+          "recurrent":true
+        },
+        {
+          "id":"57974c88-c18c-4489-ac36-63501053dd80",
+          "composition":{
+            "id":"91a3520c-c195-49eb-bbf1-4a705ba739cf",
+            "name":"Internet 20GB",
+            "attributes":[
+              {
+                "componentAttributeId":"1d2ecab5-a894-426f-897a-0199692e62e6",
+                "name":"tamanho",
+                "type":"UNIT",
+                "unitValue":{
+                  "value":300,
+                  "scale":2,
+                  "unit":"MB",
+                  "volumeFormatted":"3.00"
+                }
+              }
+            ]
+          },
+          "price":{
+            "amount":1499,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"14.99"
+          },
+          "originalPrice":{
+            "amount":1499,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"14.99"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward":{
+            "price":0,
+            "earn":0
+          },
+          "highlighted":false,
+          "availability":{
+            "begin":"2018-04-03T03:00:00",
+            "end":"2019-05-13T02:59:59"
+          },
+          "offerParameters":{
+
+          },
+          "recurrent":true
+        }
+      ]
+    },
+    {
+      "id":"12ccdb88-7778-4663-9d23-3e0301341a7f",
+      "validity":{
+        "period":"DAY",
+        "duration":10,
+        "unlimited":false
+      },
+      "mandatory":false,
+      "orderIndex":5,
+      "component":{
+        "id":"e597c4a0-09ec-4f8f-8045-993a019a2ced",
+        "name":"200 minutos outras operadoras",
+        "systemParameters":{
+
+        },
+        "userParameters":{
+
+        },
+        "productType":{
+          "id":"84532d7d-05c0-455c-8cef-cd7c753f0218",
+          "name":"Mobile_line 2",
+          "systemParameters":{
+            "teste":"teste"
+          },
+          "userParameters":{
+
+          }
+        }
+      },
+      "items":[
+        {
+          "id":"c7a1036d-5499-42eb-b3e1-1c7901e251b7",
+          "composition":{
+            "id":"84b3a1e3-311d-4a70-b4ec-f6df20859dd6",
+            "name":"200 minutos outras operadoras",
+            "attributes":[
+              {
+                "componentAttributeId":"78f1b35d-8c09-4e6e-9588-9e294b29e4aa",
+                "name":"Volume",
+                "type":"UNIT",
+                "unitValue":{
+                  "value":20000,
+                  "scale":2,
+                  "unit":"minutos",
+                  "volumeFormatted":"200.00"
+                }
+              }
+            ]
+          },
+          "price":{
+            "amount":1009,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"10.09"
+          },
+          "originalPrice":{
+            "amount":1009,
+            "scale":2,
+            "currency":"BRL",
+            "amountFormatted":"10.09"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward":{
+            "price":0,
+            "earn":0
+          },
+          "highlighted":false,
+          "availability":{
+            "begin":"2018-04-03T03:00:00",
+            "end":"2019-05-13T02:59:59"
+          },
+          "offerParameters":{
+
+          },
+          "recurrent":true
+        }
+      ]
+    }
+  ],
+  "addons":[
+
+  ],
+  "sales":[
+
+  ]
+}

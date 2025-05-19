@@ -1,0 +1,527 @@
+:source-highlighter: highlightjs
+= RealWave Sales Manager
+:doctype: book
+:icons: font
+:toc: left
+:toclevels: 4
+:sectlinks:
+:revnumber: {version}
+
+
+Sales Manager Rest API documentation.
+
+
+[[overview-http-verbs]]
+== Headers
+The headers below are required for all requests, id not informed you will receive a Bad Request.
+
+|===
+| Name | Value
+
+| `X-Organization-Slug`
+| Realwave Organization slug
+
+| `X-Application-Id`
+| An ApplicationId of the Organization
+|===
+
+
+
+= Purchase Order JOIN
+
+== Create
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-join/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-join/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-join/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-join/request-fields.adoc[]
+
+
+
+== Add Item
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-join/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-join/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-join/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-join/request-fields.adoc[]
+
+
+
+== Installation Attributes
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/http-request.adoc[]
+
+=== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/request-fields.adoc[]
+
+
+
+== Member Get Member
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-mgm-code-success/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-mgm-code-success/http-request.adoc[]
+
+=== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-mgm-code-success/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-mgm-code-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-mgm-code-success/request-fields.adoc[]
+
+
+
+= Purchase Order BUY
+
+== Create
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-buy/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-buy/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-buy/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-buy/request-fields.adoc[]
+
+
+
+== Add Item
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-buy/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-buy/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-buy/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-buy/request-fields.adoc[]
+
+
+
+
+
+= Purchase Order CHANGE
+
+== Create
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-change/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-change/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-change/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-success-with-type-change/request-fields.adoc[]
+
+
+
+== Add Item
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-change/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-change/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-change/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/add item-change/request-fields.adoc[]
+
+
+
+== Installation Attributes
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/http-request.adoc[]
+
+=== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-installation-attributes-success/request-fields.adoc[]
+
+
+== Purchase Order Subscription
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-subscription/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-subscription/http-request.adoc[]
+
+=== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-subscription/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-subscription/request-fields.adoc[]
+
+
+
+= Purchase Order COUPON
+
+== Create
+
+=== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-coupon/curl-request.adoc[]
+
+=== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-coupon/http-request.adoc[]
+
+=== Example Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-coupon/http-response.adoc[]
+
+=== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/create-purchase-order-coupon/request-fields.adoc[]
+
+
+
+= Purchase Order Segmentation
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-segmentation-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-segmentation-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-segmentation-success/http-response.adoc[]
+
+== Request fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-segmentation-success/path-parameters.adoc[]
+
+
+
+= Purchase Order On-boarding Sale
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-onboarding-sale-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-onboarding-sale-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-onboarding-sale-success/http-response.adoc[]
+
+== Request Fields:
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-onboarding-sale-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-onboarding-sale-success/request-fields.adoc[]
+
+
+
+
+
+= Purchase Order Update Item
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-item/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-item/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-item/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-item/request-fields.adoc[]
+
+
+
+
+
+= Purchase Order Protocol
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-protocol/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-protocol/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-protocol/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-protocol/request-fields.adoc[]
+
+
+
+
+
+= Delete Item from Purchase Order
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-item-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-item-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-item-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-item-success/path-parameters.adoc[]
+
+
+
+
+
+= Purchase Order Customer
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-customer-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-customer-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-customer-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-customer-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-customer-success/request-fields.adoc[]
+
+
+
+
+
+
+= Purchase Order Payment
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-payment-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-payment-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-payment-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-payment-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-payment-success/request-fields.adoc[]
+
+
+
+
+
+= Delete Installation Attributes
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-installation-attributes-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-installation-attributes-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-installation-attributes-success/http-response.adoc[]
+
+== Path parameters
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-installation-attributes-success/path-parameters.adoc[]
+
+
+
+
+
+= Purchase Order Coupon
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-coupon-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-coupon-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-coupon-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-coupon-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/update-coupon-success/request-fields.adoc[]
+
+
+
+
+
+= Purchase Order Validate
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/validate-purchase-order-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/validate-purchase-order-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/validate-purchase-order-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/validate-purchase-order-success/path-parameters.adoc[]
+
+
+
+
+
+= Checkout Purchase Order
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success/path-parameters.adoc[]
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success/request-fields.adoc[]
+
+
+
+
+
+= Checkout Purchase Order With BOLETO
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success-with-boleto/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success-with-boleto/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success-with-boleto/http-response.adoc[]
+
+== Response Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success-with-boleto/response-fields.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/checkout-purchase-order-success-with-boleto/path-parameters.adoc[]
+
+
+
+
+
+= Delete Purchase Order
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-purchase-order-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-purchase-order-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-purchase-order-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/delete-purchase-order-success/path-parameters.adoc[]
+
+
+
+
+
+= Purchase Order Callback
+
+This endpoint is responsible for receiving Purchase Order progress updates after the checkout.
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/callback-purchase-order-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/callback-purchase-order-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/callback-purchase-order-success/http-response.adoc[]
+
+== Request Fields
+include::{snippets}/realwave-sales-manager-command-application/target/generated-snippets/callback-purchase-order-success/request-fields.adoc[]
+
+
+
+
+
+= Find Purchase Order by ID
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-id-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-id-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-id-success/http-response.adoc[]
+
+== Path parameters
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-id-success/path-parameters.adoc[]
+
+
+
+
+
+= Find Purchase Order by Customer
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-customer-success/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-customer-success/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-customer-success/http-response.adoc[]
+
+== Request parameters
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-customer-success/request-parameters.adoc[]
+
+
+
+
+
+= Find Purchase Order by Protocol
+
+== Curl Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-protocol/curl-request.adoc[]
+
+== Example of Request
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-protocol/http-request.adoc[]
+
+== Example of Response
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-protocol/http-response.adoc[]
+
+== Path parameters
+include::{snippets}/realwave-sales-manager-query-application/target/generated-snippets/find-purchase-order-by-protocol/path-parameters.adoc[]

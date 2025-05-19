@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>realwave-sales-manager</artifactId>
+        <groupId>br.com.zup.realwave</groupId>
+        <version>5.0.2</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>realwave-sales-manager-command-repository</artifactId>
+    <packaging>jar</packaging>
+
+    <name>realwave-sales-manager-command-repository</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>realwave-sales-manager-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.zup.realwave.common</groupId>
+            <artifactId>realwave-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.zup</groupId>
+            <artifactId>event-store-connector</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

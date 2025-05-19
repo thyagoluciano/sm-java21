@@ -1,0 +1,17 @@
+@startuml
+    actor Mobile
+
+    Mobile -> SalesManager: Request checkout
+
+    SalesManager -> CatalogManager: Request to validation of purchase order
+    CatalogManager -> SalesManager: 200 OK
+
+    SalesManager -> CatalogManager: Get details about installation the items of purchase order
+    CatalogManager -> SalesManager: Response with purchase order detailed
+
+    SalesManager -> SalesManager: Mount object to call Customer Order Manager
+
+    SalesManager -> CustomerOrderManager: Request to payment and installation
+
+    SalesManager -> Mobile: 200 OK
+@enduml-

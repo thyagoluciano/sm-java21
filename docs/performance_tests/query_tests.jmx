@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.2 r1790748">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="query_tests" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">99</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1497992771000</longProp>
+        <longProp name="ThreadGroup.end_time">1497992771000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-Organization-Slug</stringProp>
+              <stringProp name="Header.value">test</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-Application-Id</stringProp>
+              <stringProp name="Header.value">90e421db1ba2798de9fe220b630a123de2609113</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="hostQuery" elementType="Argument">
+              <stringProp name="Argument.name">hostQuery</stringProp>
+              <stringProp name="Argument.value">swarm-lab.apirealwave.io/salesmanagerquery</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="portQuery" elementType="Argument">
+              <stringProp name="Argument.name">portQuery</stringProp>
+              <stringProp name="Argument.value">443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="purchaseIdFile" elementType="Argument">
+              <stringProp name="Argument.name">purchaseIdFile</stringProp>
+              <stringProp name="Argument.value">/tmp/purchase_order.txt</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ExpectedResult" elementType="Argument">
+              <stringProp name="Argument.name">ExpectedResult</stringProp>
+              <stringProp name="Argument.value">{&quot;mgm&quot;:{&quot;code&quot;:&quot;41be3a69-0879-46cf-9d06-7a20441eb6c7&quot;,&quot;fields&quot;:{&quot;param1&quot;:&quot;value1&quot;,&quot;param2&quot;:&quot;value2&quot;}},&quot;onBoardingSale&quot;:{&quot;id&quot;:&quot;385a1085-870d-454e-bc80-e47c51e06ccc&quot;,&quot;fields&quot;:{}},&quot;coupon&quot;:{&quot;id&quot;:&quot;de71b846-e762-4468-ab4e-b84c2e367204&quot;,&quot;fields&quot;:{&quot;param1&quot;:&quot;value1&quot;,&quot;param2&quot;:&quot;value2&quot;}},&quot;installationAttributes&quot;:[{&quot;id&quot;:&quot;FIX&quot;,&quot;customFields&quot;:{&quot;param1&quot;:&quot;value1&quot;,&quot;param2&quot;:&quot;value2&quot;}}],&quot;paymentMean&quot;:&quot;CREDIT_CART&quot;,&quot;segmentation&quot;:&quot;ddd=34&amp;customer=silver&quot;,&quot;id&quot;:&quot;{purchaseOrderId}&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;8a353aa2-e9f1-4ff2-a2e8-ae170db11f8e&quot;,&quot;type&quot;:&quot;CUSTOM&quot;,&quot;value&quot;:{&quot;msisdn&quot;:&quot;5511987654321&quot;}}],&quot;customer&quot;:{&quot;id&quot;:&quot;022c3dcd-7404-4f00-93e5-b93be813b662&quot;},&quot;status&quot;:&quot;OPENED&quot;}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="fileResultQuery" elementType="Argument">
+              <stringProp name="Argument.name">fileResultQuery</stringProp>
+              <stringProp name="Argument.value">/tmp/resultQuery.txt</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">${purchaseIdFile}</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">purchaseOrderId</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.thread</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Find Purchase Order by ID" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostQuery}</stringProp>
+          <stringProp name="HTTPSampler.port">${portQuery}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">purchase-orders/${purchaseOrderId}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">purchaseOrder</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">FileWriter fstream = new FileWriter(vars.get(&quot;fileResultQuery&quot;),true);
+BufferedWriter out = new BufferedWriter(fstream);
+String purchaseOrder = vars.get(&quot;purchaseOrder&quot;);
+String purchaseOrderId = vars.get(&quot;purchaseOrderId&quot;);
+String expectedResult = vars.get(&quot;ExpectedResult&quot;);
+expectedResult = expectedResult.replace(&quot;{purchaseOrderId}&quot;, purchaseOrderId);
+if (purchaseOrder.equals(expectedResult)) {
+	out.write(&quot;purchaseOrderId: &quot; + purchaseOrderId + &quot; successfully processed&quot;);
+	out.write(System.getProperty(&quot;line.separator&quot;));
+} else {
+	out.write(&quot;purchaseOrderId: &quot; + purchaseOrderId + &quot; processed with failure&quot;);
+	out.write(System.getProperty(&quot;line.separator&quot;));
+	out.write(purchaseOrder);
+	out.write(expectedResult);
+	out.write(System.getProperty(&quot;line.separator&quot;));
+	
+}
+out.close();
+fstream.close();
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>

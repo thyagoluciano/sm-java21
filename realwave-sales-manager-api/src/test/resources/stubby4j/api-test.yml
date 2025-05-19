@@ -1,0 +1,303 @@
+# PURCHASE ORDER
+#1
+- request:
+    method: POST
+    url: ^/purchase-orders$
+  response:
+    status: 201
+    body: >
+      {
+          "id": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+      }
+
+#2
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/segmentation$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#3
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/onboarding-sale$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#4
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/mgm$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#5
+- request:
+    method: DELETE
+    url: ^/purchase-orders/.+/mgm$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#6
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/customer$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#7
+- request:
+    method: POST
+    url: ^/purchase-orders/.+/items$
+  response:
+    status: 200
+    body: >
+      {
+          "purchaseOrderId": "ddbfa46f-3aab-49b0-8cd0-61affb95adb7",
+          "itemId" : "itemId"
+      }
+#8
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/items/.+
+  response:
+    status: 200
+    body: >
+      {
+          "purchaseOrderId": "ddbfa46f-3aab-49b0-8cd0-61affb95adb7",
+          "itemId" : "itemId"
+      }
+
+#9
+- request:
+    method: DELETE
+    url: ^/purchase-orders/.+/items/.+
+  response:
+    status: 200
+    body: >
+          {
+            "itemId" : "itemId",
+            "purchaseOrderId" : "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#10
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/payment$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#11
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/installation-attributes$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#12
+- request:
+    method: DELETE
+    url: ^/purchase-orders/.+/installation-attributes/.+
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "productTypeId" : "productTypeId"
+          }
+
+#13
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/coupon$
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#14
+- request:
+    method: GET
+    url: ^/purchase-orders/.+/validation
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#15
+- request:
+    method: POST
+    url: ^/purchase-orders/.+/checkout$
+  response:
+    status: 201
+    body: >
+          {
+              "id" : "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "customerOrder" : {
+                "id" : "97huyh76"
+              }
+          }
+
+#16
+- request:
+    method: DELETE
+    url: ^/purchase-orders/.+
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#17
+- request:
+    method: POST
+    url: ^/purchase-orders/callback$
+  response:
+    status: 204
+
+
+#18
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/protocol
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "protocol" : "protocol"
+          }
+
+#19
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/subscription
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "id" : "subscription"
+          }
+
+#20
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/type
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#21
+- request:
+    method: GET
+    url: ^/purchase-orders/.+/status$
+  response:
+    status: 200
+    body: >
+          {
+              "status": "OK"
+          }
+
+
+#22
+- request:
+    method: GET
+    url: ^/purchase-orders/.+/protocol$
+  response:
+    status: 200
+    body: >
+          {
+              "id": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "payment" : {
+
+              }
+          }
+
+#23
+- request:
+    method: GET
+    url: ^/purchase-orders/.+$
+  response:
+    status: 200
+    body: >
+          {
+              "id": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "payment" : {
+
+              }
+          }
+
+#24
+- request:
+    method: GET
+    url: ^/purchase-orders
+  response:
+    status: 200
+    body: >
+          [
+            {
+              "id": "e9faefbe-0581-4324-a6d8-6f4727d84007",
+              "payment" : {
+
+              }
+            }
+          ]
+
+#25
+- request:
+    method: PUT
+    url: ^/purchase-orders/.+/sales-force
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }
+
+#26
+- request:
+    method: DELETE
+    url: ^/purchase-orders/.+/sales-force
+  response:
+    status: 200
+    body: >
+          {
+              "purchaseOrderId": "e9faefbe-0581-4324-a6d8-6f4727d84007"
+          }

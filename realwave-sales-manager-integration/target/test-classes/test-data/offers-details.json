@@ -1,0 +1,271 @@
+{
+  "plans": [
+    {
+      "id": "504999fd-f0c4-4eb0-967c-35493edbe493",
+      "name": "plan name",
+      "validity" : {
+        "period" : "DAY",
+        "duration" : 99,
+        "unlimited" : false
+      },
+      "bundleId": "c6bb8f5c-2182-479f-b272-21abe0109865",
+      "description": "1GB de Internet limitado e 100Minutos de ligação para qualquer operadora",
+      "availability": {
+        "begin": "2017-08-29T00:00:00",
+        "end": "2050-08-29T23:59:59"
+      },
+      "reward": {
+        "price": 0,
+        "earn": 0
+      },
+      "totalPrice": {
+        "amount": 1100,
+        "scale": 2,
+        "currency": "BRL",
+        "amountFormatted": "11.00"
+      },
+      "orderIndex": 0,
+      "highlighted": false,
+      "status" : "APPROVED",
+      "items": [
+        {
+          "id": "990ddd1a-8ce4-4ec8-88f9-06968e972dd1",
+          "composition": {
+            "id": "f33078cf-ac53-4346-9a40-fd2abbabdc42",
+            "name": "INTERNET 4G 1GB",
+            "component": {
+              "id": "c7a8730b-9ec2-4375-a1d3-c989c25de8ef",
+              "name": "INTERNET 4G",
+              "systemParameters": {
+                "CODE": "NET_4G"
+              },
+              "userParameters": {},
+              "productType": {
+                "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                "name": "MOBILE",
+                "systemParameters": {
+                  "CODE": "MOBILE_LINE"
+                },
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "5c08a8ca-5ba1-482f-b72c-d0a658cf9bf7",
+                "name":"Volume",
+                "type":"UNIT",
+                "unitValue": {
+                  "value": 1,
+                  "scale": 2,
+                  "unit": "GB",
+                  "volumeFormatted": "0.01"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "1.00"
+          },
+          "originalPrice": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "1.00"
+          },
+          "discountPrice":{
+            "amount":20001,
+            "scale":2,
+            "currency":"USD",
+            "amountFormatted":"200.01"
+          },
+          "recurrent": false
+        },
+        {
+          "id": "c68931dd-fe4e-4cc3-a8dd-ec77f3f3eeb0",
+          "composition": {
+            "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+            "name": "100 MINUTOS",
+            "component": {
+              "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+              "name": "LIGAÇÃO",
+              "systemParameters": {
+                "CODE": "LIGACAO"
+              },
+              "userParameters": {},
+              "productType": {
+                "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+                "name": "MOBILE",
+                "systemParameters": {
+                  "CODE": "MOBILE_LINE"
+                },
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                "name":"Volume",
+                "type":"UNIT",
+                "unitValue": {
+                  "value": 100,
+                  "scale": 2,
+                  "unit": "Minutos",
+                  "volumeFormatted": "1.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1000,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "10.00"
+          },
+          "originalPrice": {
+            "amount": 1000,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "10.00"
+          },
+          "discountPrice":{
+            "amount":20001,
+            "scale":2,
+            "currency":"USD",
+            "amountFormatted":"200.01"
+          },
+          "recurrent": false
+        }
+      ]
+    }
+  ],
+  "customPlanConfigurations": [
+    {
+      "id": "9fb38ac3-10ee-460e-9772-358c0beaddd2",
+      "name": "customPlan",
+      "validity" : {
+        "period" : "DAY",
+        "duration" : 99,
+        "unlimited" : false
+      },
+      "mandatory": false,
+      "orderIndex": 0,
+      "component": {
+        "id": "88ab3008-a1e7-4161-a897-a4d72726de92",
+        "name": "LIGAÇÃO",
+        "systemParameters": {
+          "CODE": "LIGACAO"
+        },
+        "userParameters": {},
+        "productType": {
+          "id": "2f872db3-8157-40f9-90e4-a3b9c390605b",
+          "name": "MOBILE",
+          "systemParameters": {
+            "CODE": "MOBILE_LINE"
+          },
+          "userParameters": {}
+        }
+      },
+      "items": [
+        {
+          "id": "65745bb1-ba36-4476-9e64-3201b7e29821",
+          "composition": {
+            "id": "abe6b96c-f516-4627-9354-0fd399b73e97",
+            "name": "100 MINUTOS",
+            "attributes": [
+              {
+                "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                "name":"Volume",
+                "type":"UNIT",
+                "unitValue": {
+                  "value": 100,
+                  "scale": 2,
+                  "unit": "Minutos",
+                  "volumeFormatted": "1.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "1.00"
+          },
+          "originalPrice": {
+            "amount": 100,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "1.00"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward": {
+            "price": 0,
+            "earn": 0
+          },
+          "highlighted": false,
+          "availability": {
+            "begin": "2017-08-29T00:00:00",
+            "end": "2050-08-29T23:59:59"
+          }
+        },
+        {
+          "id": "7898a066-f693-413d-818f-baab508e7333",
+          "composition": {
+            "id": "3374471c-b934-4c0f-a204-eadfd846efe6",
+            "name": "200 MINUTOS",
+            "attributes": [
+              {
+                "componentAttributeId": "e9e1a964-6a35-46b2-8ad8-bec5e8c5b25b",
+                "name":"Volume",
+                "type":"UNIT",
+                "unitValue": {
+                  "value": 200,
+                  "scale": 2,
+                  "unit": "Minutos",
+                  "volumeFormatted": "2.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 200,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "2.00"
+          },
+          "originalPrice": {
+            "amount": 200,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "2.00"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "reward": {
+            "price": 0,
+            "earn": 0
+          },
+          "highlighted": false,
+          "availability": {
+            "begin": "2017-08-29T00:00:00",
+            "end": "2050-08-29T23:59:59"
+          }
+        }
+      ]
+    }
+  ],
+  "addons": [],
+  "sales": []
+}

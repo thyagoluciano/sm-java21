@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="20170605191800-1" author="rw">
+        <createTable tableName="order_item">
+            <column name="purchase_order_id" type="varchar(36)">
+                <constraints primaryKey="true" foreignKeyName="fk_order_item_purchase_order" references="purchase_order(id)"
+                             nullable="false"/>
+            </column>
+
+            <column name="item_id" type="varchar(36)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="type" type="varchar(36)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="custom_fields" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="created" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated" type="timestamp">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

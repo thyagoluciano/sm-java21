@@ -1,0 +1,98 @@
+{
+  "plans": [],
+  "customPlanConfigurations": [],
+  "addons": [
+    {
+      "id": "3acf6e51-3d1b-4071-a4de-9927d7ca0faa",
+      "name": "addon name",
+      "validity" : {
+        "period" : "DAY",
+        "duration" : 99,
+        "unlimited" : false
+      },
+      "availability": {
+        "begin": "2017-10-16T00:00:00",
+        "end": "2017-11-16T23:59:59"
+      },
+      "reward": {
+        "price": 0,
+        "earn": 0
+      },
+      "totalPrice": {
+        "amount": 5000000,
+        "scale": 2,
+        "currency": "BRL",
+        "amountFormatted": "50000.00"
+      },
+      "highlighted": false,
+      "description": "Internet 2GB",
+      "discountDescription": "Internet 2GB",
+      "status" : "APPROVED",
+      "items": [
+        {
+          "id": "b15a7290-4925-4552-bf86-045296134c2a",
+          "composition": {
+            "id": "2f31c477-8da8-42ac-ae69-4d19c1bc64fc",
+            "name": "Internet 2GB",
+            "component": {
+              "id": "a17406a2-45be-4082-ad89-139735b94f28",
+              "name": "Internet Account Normal",
+              "systemParameters": {
+                "QUALIFY_ST": "INTERNET",
+                "QUALIFY_GX": "pCC_GROUP-215",
+                "CONSUMPTION_TYPE": "INTERNET",
+                "QUALIFY_TT": "N7G",
+                "QUALIFY_DW": "MON TUE WED THU FRI SAT SUN",
+                "QUALIFY_PS": "-",
+                "QUALIFY_TH": "L070 L090 L100",
+                "OFFER_ID": "3800",
+                "RESOURCE_CONNECTOR": "CS17",
+                "SERVICE_TYPE": "INTERNET",
+                "OFFER_TYPE": "ACCOUNT",
+                "MOBILE_TYPE": "INTERNET"
+              },
+              "userParameters": {},
+              "productType": {
+                "id": "4bd2f2c5-2a1d-4977-b50d-c858f9019a83",
+                "name": "Telefonia móvel",
+                "systemParameters": {
+                  "RESOURCE_CONNECTOR": "CS17"
+                },
+                "userParameters": {
+                  "MSISDN": "MSISDN"
+                }
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "36312199-9d82-4e17-b19a-7875653a4c90",
+                "name" : "Volume",
+                "type" : "UNIT",
+                "unitValue": {
+                  "value": 200,
+                  "scale": 2,
+                  "unit": "GB",
+                  "volumeFormatted": "2.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 5000000,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "50000.00"
+          },
+          "discountPrice": {
+            "amount": 0,
+            "scale": 0,
+            "currency": "BRL",
+            "amountFormatted": "0.00"
+          },
+          "renewalType": "RENEW"
+        }
+      ]
+    }
+  ],
+  "sales": []
+}

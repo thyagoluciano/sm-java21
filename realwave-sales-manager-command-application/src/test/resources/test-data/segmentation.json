@@ -1,0 +1,44 @@
+{
+  "filter" : {
+    "customerId" : "11111111-1111-1111-1111-111111111111",
+    "mergeCatalogs" : true,
+    "profile" : {
+      "type" : "CLAUSE",
+      "logicalOperator" : "AND",
+      "clauses" : [ {
+        "type" : "RULE",
+        "content" : {
+          "key" : "gender",
+          "condition" : "EQUAL",
+          "value" : [ "M" ]
+        }
+      }, {
+        "type" : "RULE",
+        "content" : {
+          "key" : "tags.tag",
+          "condition" : "EQUAL",
+          "value" : [ "CLIENT" ]
+        }
+      } ]
+    },
+    "catalog" : {
+      "type" : "CLAUSE",
+      "logicalOperator" : "OR",
+      "clauses" : [ {
+        "type" : "RULE",
+        "content" : {
+          "key" : "channels.name",
+          "condition" : "EQUAL",
+          "value" : [ "CHANNEL1", "AAA" ]
+        }
+      }, {
+        "type" : "RULE",
+        "content" : {
+          "key" : "channels.name",
+          "condition" : "EQUAL",
+          "value" : [ "CHANNEL2", "AAA" ]
+        }
+      } ]
+    }
+  }
+}

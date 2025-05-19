@@ -1,0 +1,28 @@
+constraints:
+
+  - pattern: /manage/{slug:^(?!health).*$}
+    roles:
+      monitoring:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - HEAD
+        - OPTIONS
+        - PATCH
+
+  - pattern: /manage/{slug:^(?!health).*$}/**
+    roles:
+      monitoring:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - HEAD
+        - OPTIONS
+        - PATCH
+
+publicConstraints:
+  - pattern: /manage/health
+    methods:
+      - GET

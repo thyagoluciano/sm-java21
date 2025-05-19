@@ -1,0 +1,284 @@
+{
+  "plans": [
+    {
+      "id": "1f1d7969-d647-4116-8c73-3eddd5d5c977",
+      "name": "plan name 1",
+      "validity": {
+        "period": "MONTH",
+        "duration": 1,
+        "unlimited": false
+      },
+      "bundleId": "b5138a4c-f713-40a1-ab0d-01b8d5bd9032",
+      "description": "Pacote basico 2",
+      "discountDescription": "Pacote basico 2",
+      "availability": {
+        "begin": "2017-10-09T00:00:00",
+        "end": "2018-11-04T23:59:59"
+      },
+      "reward": {
+        "price": 0,
+        "earn": 0
+      },
+      "totalPrice": {
+        "amount": 4490,
+        "scale": 2,
+        "currency": "BRL",
+        "amountFormatted": "44.90"
+      },
+      "orderIndex": 3,
+      "highlighted": false,
+      "status" : "APPROVED",
+      "items": [
+        {
+          "id": "2d80dbf5-e101-4717-867d-4017e03301c4",
+          "composition": {
+            "id": "031e6a48-a081-4089-ac2c-ee10efd67eab",
+            "name": "500 minutos de ligação para mesma operadora",
+            "component": {
+              "id": "10d2bc11-a372-4b7c-a895-e9556edad5e6",
+              "name": "Ligações para mesma operadora",
+              "systemParameters": {},
+              "userParameters": {},
+              "productType": {
+                "id": "84532d7d-05c0-455c-8cef-cd7c753f0218",
+                "name": "Mobile_line",
+                "systemParameters": {},
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "2357853d-eeb2-47fa-928a-bf4bee809d09",
+                "unitValue": {
+                  "value": 50000,
+                  "scale": 2,
+                  "unit": "minutos",
+                  "volumeFormatted": "500.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1990,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "19.90"
+          },
+          "originalPrice": {
+            "amount": 1990,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "19.90"
+          },
+          "recurrent": true
+        },
+        {
+          "id": "2d825728-774b-42ad-bb24-0128ce295a6c",
+          "composition": {
+            "id": "8a256c17-12bc-4f25-be7f-4ebda910f247",
+            "name": "10GB de internet movel",
+            "component": {
+              "id": "470a2dd8-26e2-499b-9fd5-b2704e06b798",
+              "name": "Internet Movel",
+              "systemParameters": {},
+              "userParameters": {},
+              "productType": {
+                "id": "20922132-e0f2-4aef-825a-589b4ddd469c",
+                "name": "Modem 4g",
+                "systemParameters": {},
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "924af556-ba2f-4bdf-b1eb-9dabc444ee15",
+                "unitValue": {
+                  "value": 1000,
+                  "scale": 2,
+                  "unit": "GB",
+                  "volumeFormatted": "10.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 2500,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "25.00"
+          },
+          "originalPrice": {
+            "amount": 2500,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "25.00"
+          },
+          "recurrent": true
+        }
+      ]
+    },
+    {
+      "id": "c22630bf-5dc1-466b-9674-7ef23c19eb8e",
+      "name": "plan name 2",
+      "validity": {
+        "period": "MONTH",
+        "duration": 1,
+        "unlimited": false
+      },
+      "bundleId": "3c7b49f4-0c9c-465a-bb72-692ab412e9e2",
+      "description": "Plano Basico",
+      "discountDescription": "Desconto pacotão",
+      "availability": {
+        "begin": "2017-10-04T00:00:00",
+        "end": "2020-10-04T23:59:59"
+      },
+      "reward": {
+        "price": 30,
+        "earn": 5
+      },
+      "totalPrice": {
+        "amount": 2999,
+        "scale": 2,
+        "currency": "BRL",
+        "amountFormatted": "29.99"
+      },
+      "orderIndex": 0,
+      "highlighted": false,
+      "status" : "APPROVED",
+      "items": [
+        {
+          "id": "6e11848b-062f-4021-8a41-3dee53e184ac",
+          "composition": {
+            "id": "8fbdef77-1a3f-4802-9b4f-e8d8fde98b22",
+            "name": "Internet 2GB",
+            "component": {
+              "id": "edb851c9-fc47-4b9f-981d-0383f168a2a5",
+              "name": "Internet*",
+              "systemParameters": {},
+              "userParameters": {},
+              "productType": {
+                "id": "84532d7d-05c0-455c-8cef-cd7c753f0218",
+                "name": "Mobile_line",
+                "systemParameters": {},
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "8c692015-c1df-4209-97ed-0553a994395f",
+                "unitValue": {
+                  "value": 200,
+                  "scale": 2,
+                  "unit": "GB",
+                  "volumeFormatted": "2.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 1599,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "15.99"
+          },
+          "originalPrice": {
+            "amount": 1599,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "15.99"
+          },
+          "recurrent": true
+        },
+        {
+          "id": "ff91df33-0fe7-4948-ad15-5cca265a26ba",
+          "composition": {
+            "id": "031e6a48-a081-4089-ac2c-ee10efd67eab",
+            "name": "500 minutos de ligação para mesma operadora",
+            "component": {
+              "id": "10d2bc11-a372-4b7c-a895-e9556edad5e6",
+              "name": "Ligações para mesma operadora",
+              "systemParameters": {},
+              "userParameters": {},
+              "productType": {
+                "id": "84532d7d-05c0-455c-8cef-cd7c753f0218",
+                "name": "Mobile_line",
+                "systemParameters": {},
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "2357853d-eeb2-47fa-928a-bf4bee809d09",
+                "unitValue": {
+                  "value": 50000,
+                  "scale": 2,
+                  "unit": "minutos",
+                  "volumeFormatted": "500.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 600,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "6.00"
+          },
+          "originalPrice": {
+            "amount": 600,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "6.00"
+          },
+          "recurrent": true
+        },
+        {
+          "id": "572da44a-f72a-4694-9f6d-879295335dae",
+          "composition": {
+            "id": "e0070db4-b048-43a0-888a-62bdabf5dda7",
+            "name": "SMS para qualquer operadora",
+            "component": {
+              "id": "5d9aa08c-2e5a-4e8a-af34-3d63c702f60a",
+              "name": "SMS",
+              "systemParameters": {},
+              "userParameters": {},
+              "productType": {
+                "id": "84532d7d-05c0-455c-8cef-cd7c753f0218",
+                "name": "Mobile_line",
+                "systemParameters": {},
+                "userParameters": {}
+              }
+            },
+            "attributes": [
+              {
+                "componentAttributeId": "36dbc1e4-a9fa-40f2-bd2c-56b8687fe712",
+                "unitValue": {
+                  "value": 10000,
+                  "scale": 2,
+                  "unit": "unidade",
+                  "volumeFormatted": "100.00"
+                }
+              }
+            ]
+          },
+          "price": {
+            "amount": 800,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "8.00"
+          },
+          "originalPrice": {
+            "amount": 800,
+            "scale": 2,
+            "currency": "BRL",
+            "amountFormatted": "8.00"
+          },
+          "recurrent": true
+        }
+      ]
+    }
+  ],
+  "customPlanConfigurations": [],
+  "addons": [],
+  "sales": []
+}

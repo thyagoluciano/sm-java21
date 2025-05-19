@@ -1,0 +1,42 @@
+{
+  "catalogOfferId": "d5fcd7de-f9c4-47b7-8358-4c024d42f914",
+  "catalogOfferType": "PLAN",
+  "validity": {
+    "period": "DAY",
+    "duration": 30,
+    "unlimited": false
+  },
+  "price": {
+    "currency": "BRL",
+    "amount": 4990,
+    "scale": 2
+  },
+  "customFields": {
+    "param1": "value1"
+  },
+  "offerItems": [
+    {
+      "productId": "f6fcd7de-f9c4-47b7-8358-4c024d4284f5",
+      "catalogOfferItemId": "f6fcd7de-f9c4-47b7-8358-4c024d42f914",
+      "price": {
+        "currency": "BRL",
+        "amount": 2590,
+        "scale": 2
+      },
+      "customFields": {
+        "itemParam1": "value1"
+      },
+      "recurrent": true
+    },
+    {
+      "productId": "f4572771-4211-48e0-b4c3-d96bb2d305b9",
+      "catalogOfferItemId": "2aa2c4c8-915e-4392-aba9-463ab581a6fd",
+      "price": {
+        "currency": "BRL",
+        "amount": 2400,
+        "scale": 2
+      },
+      "recurrent": true
+    }
+  ]
+}

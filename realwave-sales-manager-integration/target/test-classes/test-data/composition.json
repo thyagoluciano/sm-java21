@@ -1,0 +1,97 @@
+{
+  "id" : "65745bb1-ba36-4476-9e64-3201b7e29821",
+  "name" : "name 1.1.1",
+  "description" : "Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum 1.1.1",
+  "componentId" : "22222222-8182-4987-b14e-b7ab8c511ac6",
+  "component" : {
+    "id" : "22222222-8182-4987-b14e-b7ab8c511ac6",
+    "name" : "Internet",
+    "status" : "APPROVED",
+    "productType" : {
+      "id" : "11111111-8182-4987-b14e-b7ab8c511ac6",
+      "name" : "Internet",
+      "status" : "APPROVED",
+      "categories" : [ {
+        "id" : "962ac7c4-3bc2-4382-ae63-88e84da5761a",
+        "name" : "Internacional",
+        "children" : [ ]
+      }, {
+        "id" : "8811fd92-d80a-4837-a8d5-34e44dca60d7",
+        "name" : "Nacional",
+        "children" : [ ]
+      } ],
+      "systemParameters" : {
+        "RESOURCE_CONNECTOR" : "CS17"
+      },
+      "userParameters" : {
+        "CEP" : "38400-000"
+      },
+      "channelParameters" : {
+        "CHANNEL" : "CHANNEL"
+      }
+    },
+    "attributes" : [ {
+      "id" : "433e4c61-4ee1-4c35-8845-c33d8701e07f",
+      "type" : "VALUE",
+      "name" : "Velocidade",
+      "values" : [ "10MB", "20GB" ]
+    }, {
+      "id" : "9ceb349b-917b-4248-b937-46afbaf61ebc",
+      "type" : "UNIT",
+      "name" : "Volume",
+      "units" : [ "MB", "GB", "UNLIMITED" ]
+    }, {
+      "id" : "9876abcd-1234-abcd-8845-c33d8701e0ac",
+      "type" : "TEXT",
+      "name" : "Imagem"
+    } ],
+    "systemParameters" : {
+      "RESOURCE_CONNECTOR" : "CS17"
+    },
+    "userParameters" : {
+      "CEP" : "38400-000"
+    },
+    "channelParameters" : {
+      "CHANNEL" : "CHANNEL"
+    }
+  },
+  "status" : "ARCHIVED",
+  "attributes" : [ {
+    "componentAttributeId" : "9ceb349b-917b-4248-b937-46afbaf61ebc",
+    "componentAttributeName" : "Volume",
+    "componentAttribute" : {
+      "id" : "9ceb349b-917b-4248-b937-46afbaf61ebc",
+      "type" : "UNIT",
+      "name" : "Volume",
+      "units" : [ "MB", "GB", "UNLIMITED" ]
+    },
+    "unitValue" : {
+      "value" : 10000,
+      "scale" : 2,
+      "unit" : "GB",
+      "volumeFormatted" : "100.00"
+    },
+    "type" : "UNIT"
+  }, {
+    "componentAttributeId" : "433e4c61-4ee1-4c35-8845-c33d8701e07f",
+    "componentAttributeName" : "Velocidade",
+    "componentAttribute" : {
+      "id" : "433e4c61-4ee1-4c35-8845-c33d8701e07f",
+      "type" : "VALUE",
+      "name" : "Velocidade",
+      "values" : [ "10MB", "20GB" ]
+    },
+    "value" : "10MB",
+    "type" : "VALUE"
+  }, {
+    "componentAttributeId" : "9876abcd-1234-abcd-8845-c33d8701e0ac",
+    "componentAttributeName" : "Imagem",
+    "componentAttribute" : {
+      "id" : "9876abcd-1234-abcd-8845-c33d8701e0ac",
+      "type" : "TEXT",
+      "name" : "Imagem"
+    },
+    "text" : "/local/imgs/imagem.png",
+    "type" : "TEXT"
+  } ]
+}

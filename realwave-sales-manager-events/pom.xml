@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>realwave-sales-manager</artifactId>
+        <groupId>br.com.zup.realwave</groupId>
+        <version>5.0.2</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>realwave-sales-manager-events</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.zup.realwave.event</groupId>
+            <artifactId>rw-event</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.zup.realwave</groupId>
+            <artifactId>spring-boot-starter-realwave-kserialize</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.zup.realwave.common</groupId>
+            <artifactId>realwave-context</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

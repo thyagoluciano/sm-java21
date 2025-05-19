@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170529153200_purchase_order_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170605191800_create_order_capture_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170605192200_create_order_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170620105500_modify_column_segmentation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170621143000_modifying_table_order_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170627164800_modifying_column_price_value_in_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170703165000_rename_order_capture_to_installation_attributes.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170706153600_modifying_table_order_item_add_column_product_id.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170711180900_create_customer_order.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170713160800_alter_table_order_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170726101700_alter_table_installation_attributes.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170807154000_alter_table_purchase_order_rename_column_payment_mean.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170823165200_modifying_table_order_item_add_column_and_remove_column_validity.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170825140600_alter_table_installation_attributes_product_type_id.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170905182800_modify_customer_column_size_in_the_purchase_order_table.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170914112800_alter_table_purchase_order_add_column_protocol.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170921103500_alter_table_purchase_order_add_column_type.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170922100100_alter_table_purchase_order_add_column_subscription.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170924202800_create_index_to_protocol.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201709271150300_create_payment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710041123500_add_column_custom_fields.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171003152800_rename_column_subscription_to_subscription_id.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710091123500_remove_column_custom_fields_from_purchase_order.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710091123600_add_column_custom_fields_on_payments.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171004114900_alter_table_purchase_order_add_column_channel_create_and_channel_checkout.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171004131000_adding_column_callback_at_purchase_order.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710081623500_add_column_callback_custom_fields.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20171016173400_modify_channel_column_size_in_the_purchase_order_table.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710231500000_alter_table_purchase_order_add_column_reason.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201710311651500_add_column_payment_description_on_purchase_order.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201711301110500_add_column_security_code_informed_to_payments.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201712041751500_alter_customer_order_id_size_on_table_customer_order.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201712191351500_alter_columns_increased_maximum_size.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201802231707000_create_discounts.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201804171730000_alter_table_discounts_add_percent_field.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201804171207000_alter_table_purchase_order_add_column_sales_force.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20180530103500_alter_table_discounts.xml" relativeToChangelogFile="false"/>
+    <include
+            file="classpath:config/liquibase/changelog/201806261430000_alter_table_drop_null_constraint_payment_method.xml"
+            relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/201806261709000_alter_table_order_item_add_prices_per_period_field.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190524120000_create_freight.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190524155700_add_column_installments_to_payments.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190528135800_remove_column_quantity_and_catalog_item_id_from_freight.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190719204100_add_column_quantity_to_order_item.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190901104100_add_column_total_time_to_freight.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20190901143900_rename_column_total_time_to_delivery_total_time.xml" relativeToChangelogFile="false"/>
+
+
+</databaseChangeLog>

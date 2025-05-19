@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="20170529153200-1" author="rw">
+        <createTable tableName="purchase_order">
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="segmentation" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="mgm_code" type="varchar(36)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="mgm_custom_fields" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="on_boarding_sale_offer_id" type="varchar(36)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="on_boarding_sale_custom_fields" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="customer" type="varchar(36)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="coupon_code" type="varchar(36)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="coupon_custom_fields" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="payment_mean" type="text">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="status" type="text">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="updated" type="timestamp">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20170609104800-1" author="rw">
+        <addColumn tableName="purchase_order">
+            <column name="version" type="integer"/>
+        </addColumn>
+    </changeSet>
+
+
+</databaseChangeLog>
